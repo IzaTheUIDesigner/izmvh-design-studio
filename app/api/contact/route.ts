@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     const { name, email, company, projectType, budget, message } = body
 
     await resend.emails.send({
-      from: 'IZMVH Website <onboarding@resend.dev>',
+      from: 'IZMVH Website <noreply@izmvh.co.za>',
       to: 'iza.vuyo@izmvh.co.za',
       subject: `New enquiry from ${name}`,
       html: `
