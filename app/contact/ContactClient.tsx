@@ -8,7 +8,7 @@ import Button from '@/components/Button'
 
 const contactInfo = [
   { icon: <Mail size={18} />, label: 'Email', value: 'iza.vuyo@izmvh.co.za', href: 'mailto:iza.vuyo@izmvh.co.za' },
-  { icon: <Phone size={18} />, label: 'Phone', value: '+27 (0) 00 000 0000', href: 'tel:+27000000000' },
+  { icon: <Phone size={18} />, label: 'Phone', value: '063 481 1469', href: 'tel:+27000000000' },
   { icon: <MapPin size={18} />, label: 'Location', value: 'Gqeberha (Port Elizabeth), Eastern Cape, South Africa', href: null },
   { icon: <Clock size={18} />, label: 'Response time', value: 'Within 24–48 hours on business days', href: null },
 ]

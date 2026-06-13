@@ -31,7 +31,7 @@ export default function Footer() {
                 <Mail size={14} style={{ color: '#1A8C6B' }} /> iza.vuyo@izmvh.co.za
               </a>
               <a href="tel:+27000000000" className="flex items-center gap-2 hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
-                <Phone size={14} style={{ color: '#1A8C6B' }} /> +27 (0) 00 000 0000
+                <Phone size={14} style={{ color: '#1A8C6B' }} /> 063 481 1469
               </a>
               <span className="flex items-center gap-2" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
                 <MapPin size={14} style={{ color: '#1A8C6B' }} /> Gqeberha, South Africa
