@@ -371,7 +371,18 @@ export default function QuotePageClient() {
                 <ChevronRight size={16} />
               </Button>
             ) : (
-              <Button onClick={() => setSubmitted(true)}>
+              <Button onClick={async () => {
+            try {
+              await fetch('/api/quote', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(form),
+              })
+            } catch (error) {
+              console.error(error)
+            }
+            setSubmitted(true)
+          }}>
                 Submit Brief
                 <CheckCircle size={16} />
               </Button>

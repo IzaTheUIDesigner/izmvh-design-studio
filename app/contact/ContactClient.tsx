@@ -45,8 +45,17 @@ export default function ContactPageClient() {
   const update = (key: string, value: string) =>
     setForm((prev) => ({ ...prev, [key]: value }))
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+    } catch (error) {
+      console.error(error)
+    }
     setSubmitted(true)
   }
 
