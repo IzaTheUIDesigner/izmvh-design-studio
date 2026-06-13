@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green: #0F5C4A;
+  --navy: #12183A;
+  --cream: #F5F0E8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #12183A;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(15, 92, 74, 0.2);
+  color: #12183A;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::webkit-scrollbar-track { background: #FFFFFF; }
+::-webkit-scrollbar-thumb { background: #0F5C4A; border-radius: 2px; }
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(18, 24, 58, 0.08);
+}
+
+.glow-green { box-shadow: 0 0 40px rgba(15, 92, 74, 0.2); }
+.glow-green-sm { box-shadow: 0 0 16px rgba(15, 92, 74, 0.12); }
+
+.text-gradient {
+  background: linear-gradient(135deg, #12183A 0%, #0F5C4A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #0F5C4A 0%, #1A8C6B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(15, 92, 74, 0.4);
+  box-shadow: 0 20px 60px rgba(18, 24, 58, 0.1), 0 0 30px rgba(15, 92, 74, 0.1);
+}
+
+.input-field {
+  background: #FFFFFF;
+  border: 1px solid #E5E0D8;
+  color: #12183A;
+  border-radius: 8px;
+  padding: 14px 16px;
+  width: 100%;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input-field::placeholder { color: #9CA3AF; }
+
+.input-field:focus {
+  border-color: rgba(15, 92, 74, 0.5);
+  box-shadow: 0 0 0 3px rgba(15, 92, 74, 0.08);
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(18,24,58,0.1), transparent);
+}
+
+.noise::before { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
