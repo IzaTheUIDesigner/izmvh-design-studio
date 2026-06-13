@@ -33,7 +33,6 @@ export default function AnimatedBackground() {
         style={{
           backgroundImage: 'linear-gradient(rgba(18,24,58,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(18,24,58,0.05) 1px, transparent 1px)',
 backgroundSize: '60px 60px',
-          backgroundSize: '32px 32px',
         }}
       />
       {/* Floating dots */}
