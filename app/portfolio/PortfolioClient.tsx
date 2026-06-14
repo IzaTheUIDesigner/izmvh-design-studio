@@ -17,7 +17,6 @@ const projects = [
     tags: ['Next.js', 'PostgreSQL', 'Node.js', 'Railway', 'Vercel'],
     gradient: 'bg-gradient-to-br from-green-900/60 via-slate-800 to-slate-900',
     image: '/images/uiux.png',
-    result: 'Targeting 26 SA public universities',
     duration: 'Ongoing',
   },
   {
@@ -28,7 +27,6 @@ const projects = [
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     gradient: 'bg-gradient-to-br from-slate-700 via-slate-800 to-green-dark',
     image: '/images/harrison.png',
-    result: 'Professional online presence',
     duration: '4 weeks',
   },
   {
@@ -39,7 +37,6 @@ const projects = [
     tags: ['Shopify', 'Liquid', 'PayFast', 'Custom Theme'],
     gradient: 'bg-gradient-to-br from-rose-900/60 via-slate-800 to-slate-900',
     image: '/images/northfield.png',
-    result: 'Full online store launched',
     duration: '5 weeks',
   },
   {
@@ -50,7 +47,6 @@ const projects = [
     tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
     gradient: 'bg-gradient-to-br from-blue-900/40 via-slate-800 to-slate-900',
     image: '/images/thynkunlimited.png',
-    result: 'Brand presence established',
     duration: '3 weeks',
   },
 ]
@@ -107,14 +103,14 @@ export default function PortfolioPageClient() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover object-top absolute inset-0"
-                      style={{ zIndex: 1 }}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="text-white/40 text-sm font-grotesk">Preview coming soon</span>
                     </div>
                   )}
+                </div>
 
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
