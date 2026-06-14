@@ -16,7 +16,7 @@ const projects = [
     description: 'A multi-tenant venue and event management SaaS platform built for South African public universities. Features AI-driven scheduling, sustainability analytics, and white-label deployment across 26 institutions.',
     tags: ['Next.js', 'PostgreSQL', 'Node.js', 'Railway', 'Vercel'],
     gradient: 'bg-gradient-to-br from-green-900/60 via-slate-800 to-slate-900',
-    image: '',
+    image: '/images/uiux.png',
     result: 'Targeting 26 SA public universities',
     duration: 'Ongoing',
   },
