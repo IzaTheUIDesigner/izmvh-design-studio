@@ -107,14 +107,15 @@ export default function PortfolioPageClient() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-cover object-top absolute inset-0"
+                      style={{ zIndex: 1 }}
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="text-white/40 text-sm font-grotesk">Preview coming soon</span>
                     </div>
                   )}
-                  <div className="absolute bottom-4 left-4 right-4">
+                  <div className="absolute bottom-4 left-4 right-4" style={{ zIndex: 2 }}>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-black/60 backdrop-blur-sm border border-green-DEFAULT/30 rounded-lg text-xs text-green-light font-medium">
                       <span className="w-1.5 h-1.5 rounded-full bg-green-light" />
                       {project.result}
