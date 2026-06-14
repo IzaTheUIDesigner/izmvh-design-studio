@@ -21,11 +21,12 @@ const projects = [
   },
   {
     id: 1,
-    title: 'Transformation Office',
-    category: 'Web Design',
-    description: 'A governance communications platform for an institutional transformation office. Focused on clarity, accessibility, and document management.',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Sanity CMS'],
-    gradient: 'bg-gradient-to-br from-slate-700 via-slate-800 to-green-dark',
+    title: 'Northfield E-commerce',
+    category: 'E-commerce',
+    description: 'Full e-commerce build for Northfield with seamless checkout, inventory management and PayFast integration.',
+    tags: ['Shopify', 'Liquid', 'PayFast', 'Custom Theme'],
+    gradient: 'bg-gradient-to-br from-rose-900/60 via-slate-800 to-slate-900',
+    image: '/images/northfield.png',
     result: '↑ 80% increase in document downloads',
     duration: '6 weeks',
   },
@@ -51,8 +52,317 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Nexus Tech Startup',
-    category: 'UI/UX',
+    {/* Visual */}
+              <div className={`{/* Visual */}
+              <div className={`h-52 relative overflow-hidden ${project.gradient}`}>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}h-52 relative overflow-hidden ${project.gradient}`}>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-red-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/70" />
+                        <div className="ml-2 h-1.5 bg-white/10 rounded-full flex-1" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 bg-white/20 rounded-full w-1/2" />
+                        <div className="h-1.5 bg-white/10 rounded-full w-full" />
+                      </div>
+                    </div>
+                  </>
+                )}
     description: 'Brand identity and product website for a B2B SaaS startup entering the African market. Includes full design system and Figma component library.',
     tags: ['Figma', 'Next.js', 'Framer Motion', 'Design System'],
     gradient: 'bg-gradient-to-br from-green-dark via-slate-900 to-zinc-900',
