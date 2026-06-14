@@ -16,7 +16,7 @@ const projects = [
     description: 'A multi-tenant venue and event management SaaS platform built for South African public universities. Features AI-driven scheduling, sustainability analytics, and white-label deployment across 26 institutions.',
     tags: ['Next.js', 'PostgreSQL', 'Node.js', 'Railway', 'Vercel'],
     gradient: 'bg-gradient-to-br from-green-900/60 via-slate-800 to-slate-900',
-    image: '/images/uiux.png',
+    image:'',
     duration: 'Ongoing',
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     gradient: 'bg-gradient-to-br from-slate-700 via-slate-800 to-green-dark',
     image: '/images/harrison.png',
-    duration: '4 weeks',
+    duration: '',
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const projects = [
     tags: ['Shopify', 'Liquid', 'PayFast', 'Custom Theme'],
     gradient: 'bg-gradient-to-br from-rose-900/60 via-slate-800 to-slate-900',
     image: '/images/northfield.png',
-    duration: '5 weeks',
+    duration: '',
   },
   {
     id: 3,
@@ -47,7 +47,17 @@ const projects = [
     tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
     gradient: 'bg-gradient-to-br from-blue-900/40 via-slate-800 to-slate-900',
     image: '/images/thynkunlimited.png',
-    duration: '3 weeks',
+    duration: '',
+  },
+  {
+    id: 4,
+    title: 'Audi Website Redesign',
+    category: 'UI/UX',
+    description: 'A conceptual redesign of the Audi website featuring modern UI patterns, smooth animations, and an elevated digital showroom experience.',
+    tags: ['Figma', 'Next.js', 'Framer Motion', 'UI Redesign'],
+    gradient: 'bg-gradient-to-br from-zinc-800 via-slate-800 to-slate-900',
+    image: '/images/uiux.png',
+    duration: 'Concept',
   },
 ]
 
