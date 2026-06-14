@@ -46,8 +46,32 @@ const services = [
 ]
 
 const projects = [
+  const projects = [
   {
-    title: 'Transformation Office',
+    title: 'Harrison Law Firm',
+    category: 'Web Design',
+    description: 'A professional website for a law firm focused on credibility, trust, and client conversion.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    gradient: 'bg-gradient-to-br from-slate-700 via-slate-800 to-green-dark',
+    image: '/images/harrison.png',
+  },
+  {
+    title: 'Northfield E-commerce',
+    category: 'E-commerce',
+    description: 'Full e-commerce build for Northfield with seamless checkout, inventory management and PayFast integration.',
+    tags: ['Shopify', 'Liquid', 'PayFast'],
+    gradient: 'bg-gradient-to-br from-rose-900/60 via-slate-800 to-slate-900',
+    image: '/images/northfield.png',
+  },
+  {
+    title: 'Thynk Unlimited',
+    category: 'Web Design',
+    description: 'A modern website for Thynk Unlimited with a focus on brand identity and user experience.',
+    tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+    gradient: 'bg-gradient-to-br from-blue-900/40 via-slate-800 to-slate-900',
+    image: '/images/thynkunlimited.png',
+  },
+]
     category: 'Web Design',
     description: 'A governance and strategic communications platform for an institutional transformation office.',
     tags: ['Next.js', 'TypeScript', 'Tailwind'],
