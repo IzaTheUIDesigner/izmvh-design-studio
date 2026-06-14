@@ -46,7 +46,6 @@ const services = [
 ]
 
 const projects = [
-  const projects = [
   {
     title: 'Harrison Law Firm',
     category: 'Web Design',
@@ -58,7 +57,7 @@ const projects = [
   {
     title: 'Northfield E-commerce',
     category: 'E-commerce',
-    description: 'Full e-commerce build for Northfield with seamless checkout, inventory management and PayFast integration.',
+    description: 'Full e-commerce build for Northfield with seamless checkout and PayFast integration.',
     tags: ['Shopify', 'Liquid', 'PayFast'],
     gradient: 'bg-gradient-to-br from-rose-900/60 via-slate-800 to-slate-900',
     image: '/images/northfield.png',
@@ -70,26 +69,6 @@ const projects = [
     tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
     gradient: 'bg-gradient-to-br from-blue-900/40 via-slate-800 to-slate-900',
     image: '/images/thynkunlimited.png',
-  },
-]
-    category: 'Web Design',
-    description: 'A governance and strategic communications platform for an institutional transformation office.',
-    tags: ['Next.js', 'TypeScript', 'Tailwind'],
-    gradient: 'bg-gradient-to-br from-slate-800 via-slate-900 to-green-dark',
-  },
-  {
-    title: 'EstateView Property',
-    category: 'E-commerce',
-    description: 'Premium property listings platform with advanced search, virtual tours, and lead capture.',
-    tags: ['React', 'Node.js', 'PostgreSQL'],
-    gradient: 'bg-gradient-to-br from-zinc-800 via-zinc-900 to-slate-900',
-  },
-  {
-    title: 'Nexus Tech Startup',
-    category: 'UI/UX Design',
-    description: 'Brand identity and product website for a B2B SaaS startup entering the African market.',
-    tags: ['Figma', 'Next.js', 'Framer Motion'],
-    gradient: 'bg-gradient-to-br from-green-dark via-slate-900 to-zinc-900',
   },
 ]
 

@@ -10,6 +10,7 @@ interface PortfolioCardProps {
   description: string
   tags: string[]
   gradient: string
+  image?: string
   href?: string
   index?: number
 }
@@ -20,6 +21,7 @@ export default function PortfolioCard({
   description,
   tags,
   gradient,
+  image,
   href = '/portfolio',
   index = 0,
 }: PortfolioCardProps) {
@@ -31,13 +33,12 @@ export default function PortfolioCard({
       transition={{ duration: 0.6, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
       className="group relative bg-white border border-grey-DEFAULT/60 rounded-2xl overflow-hidden card-hover"
     >
-      {/* Visual preview */}
       <div className={`h-52 relative overflow-hidden ${gradient}`}>
         {image ? (
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover object-top"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
           />
         ) : (
           <>
@@ -55,288 +56,8 @@ export default function PortfolioCard({
             </div>
           </>
         )}
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top"
-          />
-        ) : (
-          <>
-            <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-400/70" />
-                <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
-                <div className="w-2 h-2 rounded-full bg-green-400/70" />
-              </div>
-              <div className="h-1.5 bg-white/10 rounded-full w-3/4" />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <div className="h-2 bg-white/20 rounded-full w-2/3" />
-              <div className="h-2 bg-white/10 rounded-full w-full" />
-            </div>
-          </>
-        )}
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top"
-          />
-        ) : (
-          <>
-            <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-400/70" />
-                <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
-                <div className="w-2 h-2 rounded-full bg-green-400/70" />
-              </div>
-              <div className="h-1.5 bg-white/10 rounded-full w-3/4" />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <div className="h-2 bg-white/20 rounded-full w-2/3" />
-              <div className="h-2 bg-white/10 rounded-full w-full" />
-            </div>
-          </>
-        )}
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top"
-          />
-        ) : (
-          <>
-            <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-400/70" />
-                <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
-                <div className="w-2 h-2 rounded-full bg-green-400/70" />
-              </div>
-              <div className="h-1.5 bg-white/10 rounded-full w-3/4" />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <div className="h-2 bg-white/20 rounded-full w-2/3" />
-              <div className="h-2 bg-white/10 rounded-full w-full" />
-            </div>
-          </>
-        )}
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top"
-          />
-        ) : (
-          <>
-            <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-400/70" />
-                <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
-                <div className="w-2 h-2 rounded-full bg-green-400/70" />
-              </div>
-              <div className="h-1.5 bg-white/10 rounded-full w-3/4" />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <div className="h-2 bg-white/20 rounded-full w-2/3" />
-              <div className="h-2 bg-white/10 rounded-full w-full" />
-            </div>
-          </>
-        )}
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top"
-          />
-        ) : (
-          <>
-            <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-400/70" />
-                <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
-                <div className="w-2 h-2 rounded-full bg-green-400/70" />
-              </div>
-              <div className="h-1.5 bg-white/10 rounded-full w-3/4" />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <div className="h-2 bg-white/20 rounded-full w-2/3" />
-              <div className="h-2 bg-white/10 rounded-full w-full" />
-            </div>
-          </>
-        )}
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top"
-          />
-        ) : (
-          <>
-            <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-400/70" />
-                <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
-                <div className="w-2 h-2 rounded-full bg-green-400/70" />
-              </div>
-              <div className="h-1.5 bg-white/10 rounded-full w-3/4" />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <div className="h-2 bg-white/20 rounded-full w-2/3" />
-              <div className="h-2 bg-white/10 rounded-full w-full" />
-            </div>
-          </>
-        )}
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top"
-          />
-        ) : (
-          <>
-            <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-400/70" />
-                <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
-                <div className="w-2 h-2 rounded-full bg-green-400/70" />
-              </div>
-              <div className="h-1.5 bg-white/10 rounded-full w-3/4" />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <div className="h-2 bg-white/20 rounded-full w-2/3" />
-              <div className="h-2 bg-white/10 rounded-full w-full" />
-            </div>
-          </>
-        )}
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top"
-          />
-        ) : (
-          <>
-            <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-400/70" />
-                <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
-                <div className="w-2 h-2 rounded-full bg-green-400/70" />
-              </div>
-              <div className="h-1.5 bg-white/10 rounded-full w-3/4" />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <div className="h-2 bg-white/20 rounded-full w-2/3" />
-              <div className="h-2 bg-white/10 rounded-full w-full" />
-            </div>
-          </>
-        )}
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top"
-          />
-        ) : (
-          <>
-            <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-400/70" />
-                <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
-                <div className="w-2 h-2 rounded-full bg-green-400/70" />
-              </div>
-              <div className="h-1.5 bg-white/10 rounded-full w-3/4" />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <div className="h-2 bg-white/20 rounded-full w-2/3" />
-              <div className="h-2 bg-white/10 rounded-full w-full" />
-            </div>
-          </>
-        )}
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top"
-          />
-        ) : (
-          <>
-            <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-400/70" />
-                <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
-                <div className="w-2 h-2 rounded-full bg-green-400/70" />
-              </div>
-              <div className="h-1.5 bg-white/10 rounded-full w-3/4" />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <div className="h-2 bg-white/20 rounded-full w-2/3" />
-              <div className="h-2 bg-white/10 rounded-full w-full" />
-            </div>
-          </>
-        )}
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top"
-          />
-        ) : (
-          <>
-            <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-400/70" />
-                <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
-                <div className="w-2 h-2 rounded-full bg-green-400/70" />
-              </div>
-              <div className="h-1.5 bg-white/10 rounded-full w-3/4" />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <div className="h-2 bg-white/20 rounded-full w-2/3" />
-              <div className="h-2 bg-white/10 rounded-full w-full" />
-            </div>
-          </>
-        )}
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top"
-          />
-        ) : (
-          <>
-            <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-              <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-400/70" />
-                <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
-                <div className="w-2 h-2 rounded-full bg-green-400/70" />
-              </div>
-              <div className="h-1.5 bg-white/10 rounded-full w-3/4" />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <div className="h-2 bg-white/20 rounded-full w-2/3" />
-              <div className="h-2 bg-white/10 rounded-full w-full" />
-            </div>
-          </>
-        )}
-        {/* Mockup browser bar */}
-        <div className="absolute top-4 left-4 right-4 bg-black/40 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-          <div className="flex items-center gap-1.5 mb-2">
-            <div className="w-2 h-2 rounded-full bg-red-400/70" />
-            <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
-            <div className="w-2 h-2 rounded-full bg-green-400/70" />
-          </div>
-          <div className="h-1.5 bg-white/10 rounded-full w-3/4" />
-        </div>
-        {/* Abstract content lines */}
-        <div className="absolute bottom-6 left-6 right-6 space-y-2">
-          <div className="h-2 bg-white/20 rounded-full w-2/3" />
-          <div className="h-2 bg-white/10 rounded-full w-full" />
-          <div className="h-2 bg-white/10 rounded-full w-4/5" />
-        </div>
       </div>
 
-      {/* Content */}
       <div className="p-6">
         <span className="text-xs font-grotesk font-semibold uppercase tracking-widest text-green-light mb-2 block">
           {category}
@@ -345,23 +66,14 @@ export default function PortfolioCard({
           {title}
         </h3>
         <p className="text-navy-DEFAULT/60 text-sm leading-relaxed mb-4">{description}</p>
-
-        {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-5">
           {tags.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs px-2.5 py-1 bg-grey-DEFAULT border border-grey-DEFAULT/60 rounded-full text-navy-DEFAULT/60"
-            >
+            <span key={tag} className="text-xs px-2.5 py-1 bg-grey-DEFAULT border border-grey-DEFAULT/60 rounded-full text-navy-DEFAULT/60">
               {tag}
             </span>
           ))}
         </div>
-
-        <Link
-          href={href}
-          className="inline-flex items-center gap-1.5 text-sm text-navy-DEFAULT font-medium opacity-60 group-hover:opacity-100 group-hover:text-green-light group-hover:gap-2.5 transition-all"
-        >
+        <Link href={href} className="inline-flex items-center gap-1.5 text-sm text-navy-DEFAULT/40 font-medium group-hover:opacity-100 group-hover:text-green-light group-hover:gap-2.5 transition-all">
           View Case Study <ArrowUpRight size={14} />
         </Link>
       </div>
