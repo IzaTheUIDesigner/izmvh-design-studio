@@ -6,9 +6,19 @@ import { ArrowUpRight, Globe, ShoppingBag, Palette } from 'lucide-react'
 import SectionHeading from '@/components/SectionHeading'
 import Button from '@/components/Button'
 
-const categories = ['All', 'Web Design', 'E-commerce', 'UI/UX']
+const categories = ['All', 'Web Design', 'E-commerce', 'UI/UX', 'EdTech']
 
 const projects = [
+  {
+    id: 0,
+    title: 'CampusOrbit',
+    category: 'EdTech',
+    description: 'A multi-tenant venue and event management SaaS platform built for South African public universities. Features AI-driven scheduling, sustainability analytics, and white-label deployment across 26 institutions.',
+    tags: ['Next.js', 'PostgreSQL', 'Node.js', 'Railway', 'Vercel'],
+    gradient: 'bg-gradient-to-br from-green-900/60 via-slate-800 to-slate-900',
+    result: 'Targeting 26 SA public universities',
+    duration: 'Ongoing',
+  },
   {
     id: 1,
     title: 'Transformation Office',
