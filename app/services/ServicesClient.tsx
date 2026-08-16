@@ -1,17 +1,31 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Globe, ShoppingBag, Palette, Wrench, CheckCircle, ArrowUpRight } from 'lucide-react'
+import { Globe, ShoppingBag, Palette, Wrench, ArrowUpRight } from 'lucide-react'
 import SectionHeading from '@/components/SectionHeading'
 import Button from '@/components/Button'
 
-const services = [
+type ServiceSize = 'large' | 'tall' | 'small'
+
+const services: {
+  icon: React.ReactNode
+  title: string
+  subtitle: string
+  description: string
+  shortDescription: string
+  tags: string[]
+  features: string[]
+  benefits: string[]
+  size: ServiceSize
+}[] = [
   {
-    icon: <Globe size={28} />,
+    icon: <Globe size={24} />,
     title: 'Website Design & Development',
     subtitle: 'Your online presence, perfected.',
     description:
       'We design and build high-performance websites that look remarkable and convert visitors into customers. Every site is crafted from scratch to match your brand, with a focus on speed, SEO, and seamless user experience.',
+    shortDescription: 'High-performance websites built from scratch to match your brand.',
+    tags: ['No templates', 'SEO-optimised', 'Mobile-first', 'CMS integration'],
     features: [
       'Custom responsive design — no templates',
       'SEO-optimised HTML structure',
@@ -25,35 +39,16 @@ const services = [
       'Rank higher in Google search results',
       'Convert more visitors into leads and customers',
     ],
-    gradient: 'from-green-dark/30 to-transparent',
+    size: 'large',
   },
   {
-    icon: <ShoppingBag size={28} />,
-    title: 'E-commerce Development',
-    subtitle: 'Sell more, online.',
-    description:
-      'Full-featured online stores designed for conversion and built to scale. Whether you need a Shopify store or a custom-built platform, we handle everything from catalogue to checkout.',
-    features: [
-      'Shopify & custom e-commerce builds',
-      'Secure payment gateway integration (PayFast, PayGate, Stripe)',
-      'Inventory management systems',
-      'Mobile-optimised checkout flow',
-      'Product photography guidance',
-      'Order management & reporting',
-    ],
-    benefits: [
-      'Start selling online within weeks, not months',
-      'Reduce cart abandonment with optimised UX',
-      'Accept payments securely in ZAR and other currencies',
-    ],
-    gradient: 'from-slate-700/20 to-transparent',
-  },
-  {
-    icon: <Palette size={28} />,
+    icon: <Palette size={20} />,
     title: 'UI/UX Design',
     subtitle: 'Design that thinks.',
     description:
       'Thoughtful interfaces that put your users first. We research, prototype, and design digital experiences that are intuitive, accessible, and genuinely enjoyable to use.',
+    shortDescription: 'Research, prototyping, and interfaces people enjoy using.',
+    tags: ['Figma deliverables', 'WCAG 2.1', 'Usability testing'],
     features: [
       'User research and journey mapping',
       'Wireframes and interactive prototypes',
@@ -67,14 +62,39 @@ const services = [
       'Build a consistent visual identity across all touchpoints',
       'Make data-informed design decisions',
     ],
-    gradient: 'from-purple-900/20 to-transparent',
+    size: 'tall',
   },
   {
-    icon: <Wrench size={28} />,
+    icon: <ShoppingBag size={18} />,
+    title: 'E-commerce Development',
+    subtitle: 'Sell more, online.',
+    description:
+      'Full-featured online stores designed for conversion and built to scale. Whether you need a Shopify store or a custom-built platform, we handle everything from catalogue to checkout.',
+    shortDescription: 'Full-featured online stores built for conversion and scale.',
+    tags: ['Shopify & custom builds', 'Secure checkout'],
+    features: [
+      'Shopify & custom e-commerce builds',
+      'Secure payment gateway integration (PayFast, PayGate, Stripe)',
+      'Inventory management systems',
+      'Mobile-optimised checkout flow',
+      'Product photography guidance',
+      'Order management & reporting',
+    ],
+    benefits: [
+      'Start selling online within weeks, not months',
+      'Reduce cart abandonment with optimised UX',
+      'Accept payments securely in ZAR and other currencies',
+    ],
+    size: 'small',
+  },
+  {
+    icon: <Wrench size={18} />,
     title: 'Maintenance & Support',
     subtitle: 'Always on, always up-to-date.',
     description:
       'Your website is a living asset that needs ongoing care. Our maintenance plans keep it fast, secure, and current — so you can focus on running your business.',
+    shortDescription: 'Ongoing care to keep your site fast, secure, and current.',
+    tags: ['Security audits', '48-hour SLA'],
     features: [
       'Monthly CMS and plugin updates',
       'Performance monitoring and optimisation',
@@ -88,7 +108,7 @@ const services = [
       'Stay ahead of security vulnerabilities',
       'Keep your content fresh without technical headaches',
     ],
-    gradient: 'from-blue-900/20 to-transparent',
+    size: 'small',
   },
 ]
 
@@ -117,6 +137,12 @@ const pricing = [
   },
 ]
 
+const sizeClasses: Record<ServiceSize, string> = {
+  large: 'sm:col-span-2 sm:row-span-1',
+  tall: 'sm:col-span-1 sm:row-span-2',
+  small: 'sm:col-span-1 sm:row-span-1',
+}
+
 export default function ServicesPageClient() {
   return (
     <>
@@ -130,60 +156,93 @@ export default function ServicesPageClient() {
         />
       </section>
 
-      {/* Service Detail Sections */}
-      <div className="max-w-7xl mx-auto px-6 space-y-6 mb-28">
-        {services.map((service, i) => (
-          <motion.div
-            key={service.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.6 }}
-            className={`bg-white border border-grey-DEFAULT/60 rounded-3xl p-8 md:p-12 overflow-hidden relative`}
-          >
-            <div className={`absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l ${service.gradient} pointer-events-none`} />
+      {/* Service Bento Grid */}
+      <div className="max-w-7xl mx-auto px-6 mb-28">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:auto-rows-[1fr]">
+          {services.map((service, i) => {
+            const isLarge = service.size === 'large'
+            const isTall = service.size === 'tall'
 
-            <div className="grid lg:grid-cols-2 gap-10 relative z-10">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-green-DEFAULT/10 border border-green-DEFAULT/20 flex items-center justify-center text-green-light mb-6">
-                  {service.icon}
-                </div>
-                <span className="text-xs font-grotesk font-semibold text-green-light uppercase tracking-widest mb-2 block">
-                  {service.subtitle}
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold font-grotesk text-navy-DEFAULT mb-4 leading-tight">
-                  {service.title}
-                </h2>
-                <p className="text-navy-DEFAULT/60 leading-relaxed mb-8">{service.description}</p>
-                <Button href="/quote" arrow>Get a Quote</Button>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-grotesk font-semibold text-navy-DEFAULT text-sm mb-4 uppercase tracking-wide">What&apos;s included</h4>
-                  <ul className="space-y-2.5">
-                    {service.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2 text-sm text-navy-DEFAULT/60">
-                        <CheckCircle size={14} className="text-green-light mt-0.5 flex-shrink-0" />
-                        {f}
-                      </li>
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className={`relative overflow-hidden bg-white border border-grey-DEFAULT/60 rounded-3xl flex flex-col ${
+                  isLarge ? 'p-8 md:p-10' : 'p-7'
+                } ${sizeClasses[service.size]}`}
+              >
+                {isLarge && (
+                  <Globe
+                    size={220}
+                    strokeWidth={1}
+                    className="absolute -right-8 -bottom-10 text-green-DEFAULT/5 pointer-events-none"
+                    aria-hidden="true"
+                  />
+                )}
+
+                <div className="relative z-10 flex flex-col h-full">
+                  <div
+                    className={`rounded-2xl bg-green-DEFAULT/10 border border-green-DEFAULT/20 flex items-center justify-center text-green-light mb-5 ${
+                      isLarge ? 'w-14 h-14' : 'w-11 h-11'
+                    }`}
+                  >
+                    {service.icon}
+                  </div>
+
+                  <span className="text-xs font-grotesk font-semibold text-green-light uppercase tracking-widest mb-2 block">
+                    {service.subtitle}
+                  </span>
+
+                  <h3
+                    className={`font-bold font-grotesk text-navy-DEFAULT leading-tight mb-3 ${
+                      isLarge ? 'text-2xl md:text-3xl' : 'text-lg'
+                    }`}
+                  >
+                    {service.title}
+                  </h3>
+
+                  <p
+                    className={`text-navy-DEFAULT/60 leading-relaxed mb-5 ${
+                      isLarge ? 'max-w-md' : 'text-sm'
+                    }`}
+                  >
+                    {isLarge ? service.description : service.shortDescription}
+                  </p>
+
+                  <div className={`flex flex-wrap gap-2 ${isTall ? 'flex-col items-start' : ''} mb-6`}>
+                    {service.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs text-green-light bg-green-DEFAULT/10 px-2.5 py-1 rounded-full"
+                      >
+                        {tag}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
+
+                  <div className="mt-auto">
+                    {isLarge ? (
+                      <Button href="/quote" arrow>
+                        Get a Quote
+                      </Button>
+                    ) : (
+                      <a
+                        href="/quote"
+                        className="inline-flex items-center gap-1.5 text-sm font-grotesk font-semibold text-green-light hover:gap-2.5 transition-all"
+                      >
+                        Get a Quote
+                        <ArrowUpRight size={14} />
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-grotesk font-semibold text-navy-DEFAULT text-sm mb-4 uppercase tracking-wide">Key benefits</h4>
-                  <ul className="space-y-2.5">
-                    {service.benefits.map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-sm text-navy-DEFAULT/60">
-                        <ArrowUpRight size={14} className="text-green-light mt-0.5 flex-shrink-0" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+              </motion.div>
+            )
+          })}
+        </div>
       </div>
 
       <div className="divider" />
@@ -222,7 +281,7 @@ export default function ServicesPageClient() {
               <ul className="space-y-3 mb-8 flex-1">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-center gap-2 text-sm text-navy-DEFAULT/60">
-                    <CheckCircle size={14} className="text-green-light flex-shrink-0" />
+                    <ArrowUpRight size={14} className="text-green-light flex-shrink-0 rotate-45" />
                     {f}
                   </li>
                 ))}
