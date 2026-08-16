@@ -199,36 +199,6 @@ export default function HomePage() {
               </div>
             </motion.div>
           </div>
-
-          {/* Floating cards — right side desktop */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.5 }}
-            className="absolute right-6 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-4 w-72"
-          >
-            {[
-              { label: 'New enquiry', sub: 'Property website — just now', color: 'bg-green-DEFAULT' },
-              { label: '↑ 142% traffic', sub: 'Nkosi Consulting · this month', color: 'bg-blue-600' },
-              { label: 'Site deployed ✓', sub: 'Bloom Boutique · 2 min ago', color: 'bg-purple-600' },
-            ].map((card, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 + i * 0.15 }}
-                className="bg-white/80 backdrop-blur-sm border border-grey-DEFAULT/60 rounded-xl p-4 glow-green-sm"
-              >
-                <div className="flex items-center gap-3">
-                  <div className={`w-2.5 h-2.5 rounded-full ${card.color}`} />
-                  <div>
-                    <p className="text-navy-DEFAULT text-sm font-medium">{card.label}</p>
-                    <p className="text-navy-DEFAULT/60 text-xs">{card.sub}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </section>
 
