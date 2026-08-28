@@ -1,6 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 
@@ -31,6 +32,54 @@ const projects = [
     image: '/images/thynkunlimited.png',
   },
 ]
+
+function ProjectCard({ project, index }: { project: (typeof projects)[number]; index: number }) {
+  const imageFrameRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({ target: imageFrameRef, offset: ['start end', 'end start'] })
+  const imageY = useTransform(scrollYProgress, [0, 1], [-24, 24])
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      className={`group relative p-[7px] pb-6 ${panel} transition-colors hover:border-accent/30`}
+    >
+      <Link href="/portfolio" className="absolute inset-0 z-10" aria-label={`View ${project.title} case study`} />
+
+      <div ref={imageFrameRef} className="relative overflow-hidden mb-5 h-48">
+        <motion.div
+          style={{ y: imageY, top: '-24px', height: 'calc(100% + 48px)' }}
+          className="absolute inset-x-0"
+        >
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+        </motion.div>
+        <span className={`absolute top-2.5 right-2.5 px-3 py-2 text-[10px] text-heading opacity-0 group-hover:opacity-100 transition-opacity ${panel}`}>
+          {project.category}{project.duration ? ` · ${project.duration}` : ''}
+        </span>
+      </div>
+
+      <div className="pl-2 pr-10">
+        <h3 className="text-heading text-base font-medium tracking-tight mb-2 transition-colors group-hover:text-accent">
+          {project.title}
+        </h3>
+        <p className="text-muted text-xs leading-relaxed">{project.description}</p>
+      </div>
+
+      <span
+        aria-hidden
+        className="absolute right-5 bottom-5 w-8 h-8 flex items-center justify-center border border-white/10 text-muted transition-colors group-hover:text-accent group-hover:border-accent/30"
+      >
+        <ArrowUpRight size={14} />
+      </span>
+    </motion.div>
+  )
+}
 
 export default function Projects() {
   return (
@@ -68,41 +117,7 @@ export default function Projects() {
         {/* Project grid */}
         <div className="grid md:grid-cols-3 gap-4">
           {projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className={`group relative p-[7px] pb-6 ${panel} transition-colors hover:border-accent/30`}
-            >
-              <Link href="/portfolio" className="absolute inset-0 z-10" aria-label={`View ${project.title} case study`} />
-
-              <div className="relative overflow-hidden mb-5">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                />
-                <span className={`absolute top-2.5 right-2.5 px-3 py-2 text-[10px] text-heading opacity-0 group-hover:opacity-100 transition-opacity ${panel}`}>
-                  {project.category}{project.duration ? ` · ${project.duration}` : ''}
-                </span>
-              </div>
-
-              <div className="pl-2 pr-10">
-                <h3 className="text-heading text-base font-medium tracking-tight mb-2 transition-colors group-hover:text-accent">
-                  {project.title}
-                </h3>
-                <p className="text-muted text-xs leading-relaxed">{project.description}</p>
-              </div>
-
-              <span
-                aria-hidden
-                className="absolute right-5 bottom-5 w-8 h-8 flex items-center justify-center border border-white/10 text-muted transition-colors group-hover:text-accent group-hover:border-accent/30"
-              >
-                <ArrowUpRight size={14} />
-              </span>
-            </motion.div>
+            <ProjectCard key={project.title} project={project} index={i} />
           ))}
         </div>
       </div>

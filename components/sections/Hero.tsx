@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { Clock, MapPin } from 'lucide-react'
 import Button from '@/components/Button'
 
@@ -33,9 +33,21 @@ function useLiveTime(timeZone: string) {
 export default function Hero() {
   const time = useLiveTime('Africa/Johannesburg')
 
+  const sectionRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  })
+  const recedeOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.35])
+  const recedeScale = useTransform(scrollYProgress, [0, 1], [1, 0.94])
+  const recedeY = useTransform(scrollYProgress, [0, 1], [0, -40])
+
   return (
-    <section className="relative pt-36 md:pt-40 pb-16 px-4 md:px-6">
-      <div className={`max-w-7xl mx-auto p-3 md:p-4 ${panel}`}>
+    <section ref={sectionRef} className="relative pt-36 md:pt-40 pb-16 px-4 md:px-6">
+      <motion.div
+        style={{ opacity: recedeOpacity, scale: recedeScale, y: recedeY }}
+        className={`max-w-7xl mx-auto p-3 md:p-4 ${panel}`}
+      >
         <div className="flex flex-col lg:flex-row gap-3 md:gap-4">
           {/* Brand visual panel */}
           <motion.div
@@ -154,7 +166,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

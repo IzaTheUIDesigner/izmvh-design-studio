@@ -1,6 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import {
   Globe, ShoppingBag, Wrench, Palette, CheckCircle,
@@ -47,6 +48,13 @@ const process = [
 ]
 
 export default function HomePage() {
+  const processRef = useRef<HTMLElement>(null)
+  const { scrollYProgress: processProgress } = useScroll({
+    target: processRef,
+    offset: ['start 85%', 'end 55%'],
+  })
+  const processLineScale = useTransform(processProgress, [0, 1], [0, 1])
+
   return (
     <>
       <Hero />
@@ -115,7 +123,7 @@ export default function HomePage() {
       <div className="divider" />
 
       {/* ── PROCESS ──────────────────────────────────────────── */}
-      <section className="py-28 max-w-7xl mx-auto px-6">
+      <section ref={processRef} className="py-28 max-w-7xl mx-auto px-6">
         <SectionHeading
           label="Our Process"
           title="How we work."
@@ -124,8 +132,12 @@ export default function HomePage() {
           className="mb-16"
         />
         <div className="grid md:grid-cols-4 gap-0 relative">
-          {/* Connecting line */}
-          <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+          {/* Connecting line: static track + scroll-drawn accent fill */}
+          <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-white/10" />
+          <motion.div
+            className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-accent origin-left"
+            style={{ scaleX: processLineScale }}
+          />
           {process.map((step, i) => (
             <motion.div
               key={step.title}
