@@ -12,19 +12,22 @@ const projects = [
   {
     title: 'Harrison Law Firm',
     category: 'Web Design',
-    description: 'A professional website for a law firm focused on credibility, trust, and client conversion.',
+    duration: 'Concept',
+    description: 'A concept website for a law firm brand, designed around credibility, trust, and conversion-focused UX.',
     image: '/images/harrison.png',
   },
   {
     title: 'Northfield E-commerce',
     category: 'E-commerce',
-    description: 'Full e-commerce build for Northfield with seamless checkout, inventory management and PayFast integration.',
+    duration: 'Concept',
+    description: 'A concept e-commerce build with seamless checkout, inventory management, and PayFast integration.',
     image: '/images/northfield.png',
   },
   {
     title: 'Thynk Unlimited',
     category: 'Web Design',
-    description: 'A modern website for Thynk Unlimited with a focus on brand identity and user experience.',
+    duration: 'Concept',
+    description: 'A concept website exploring brand identity and user experience.',
     image: '/images/thynkunlimited.png',
   },
 ]
@@ -82,7 +85,7 @@ export default function Projects() {
                   className="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
                 <span className={`absolute top-2.5 right-2.5 px-3 py-2 text-[10px] text-heading opacity-0 group-hover:opacity-100 transition-opacity ${panel}`}>
-                  {project.category}
+                  {project.category}{project.duration ? ` · ${project.duration}` : ''}
                 </span>
               </div>
 
