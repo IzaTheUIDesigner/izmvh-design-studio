@@ -28,9 +28,9 @@ export default function Button({
   const base = 'inline-flex items-center gap-2 font-medium rounded-lg transition-all duration-200 font-sans'
 
   const variants = {
-    primary: 'bg-green-DEFAULT hover:bg-green-light text-navy-DEFAULT glow-green-sm hover:glow-green',
-    secondary: 'bg-transparent border border-grey-DEFAULT/60 hover:border-green-DEFAULT text-navy-DEFAULT hover:bg-white',
-    ghost: 'text-navy-DEFAULT/60 hover:text-navy-DEFAULT bg-transparent',
+    primary: 'bg-accent hover:bg-accent/90 text-black glow-green-sm hover:glow-green',
+    secondary: 'bg-transparent border border-white/15 hover:border-accent/50 text-heading hover:bg-white/5',
+    ghost: 'text-muted hover:text-heading bg-transparent',
   }
 
   const sizes = {

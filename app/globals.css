@@ -4,7 +4,8 @@
 
 :root {
   --dark: #040404;
-  --accent: #00aaff;
+  --accent: #FF4D1C;
+  --accent-rgb: 255 77 28;
   --muted: #8E8E8E;
   --heading: #F9F9F9;
   --green: #0F5C4A;
@@ -32,7 +33,7 @@ body {
 }
 
 ::selection {
-  background: rgba(0, 170, 255, 0.25);
+  background: rgb(var(--accent-rgb) / 0.25);
   color: var(--heading);
 }
 
@@ -41,14 +42,14 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
 
 .glass-nav {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(4, 4, 4, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(18, 24, 58, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.glow-green { box-shadow: 0 0 40px rgba(15, 92, 74, 0.2); }
-.glow-green-sm { box-shadow: 0 0 16px rgba(15, 92, 74, 0.12); }
+.glow-green { box-shadow: 0 0 40px rgb(var(--accent-rgb) / 0.2); }
+.glow-green-sm { box-shadow: 0 0 16px rgb(var(--accent-rgb) / 0.12); }
 
 .text-gradient {
   background: linear-gradient(135deg, #12183A 0%, #0F5C4A 100%);
@@ -58,7 +59,7 @@ body {
 }
 
 .text-gradient-green {
-  background: linear-gradient(135deg, #0F5C4A 0%, #1A8C6B 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #FF8552 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -70,28 +71,28 @@ body {
 
 .card-hover:hover {
   transform: translateY(-4px);
-  border-color: rgba(15, 92, 74, 0.4);
-  box-shadow: 0 20px 60px rgba(18, 24, 58, 0.1), 0 0 30px rgba(15, 92, 74, 0.1);
+  border-color: rgb(var(--accent-rgb) / 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 30px rgb(var(--accent-rgb) / 0.1);
 }
 
 .input-field {
-  background: #FFFFFF;
-  border: 1px solid #E5E0D8;
-  color: #12183A;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--heading);
   border-radius: 8px;
   padding: 14px 16px;
   width: 100%;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'DM Sans', system-ui, sans-serif;
   font-size: 15px;
   transition: all 0.2s ease;
   outline: none;
 }
 
-.input-field::placeholder { color: #9CA3AF; }
+.input-field::placeholder { color: var(--muted); }
 
 .input-field:focus {
-  border-color: rgba(15, 92, 74, 0.5);
-  box-shadow: 0 0 0 3px rgba(15, 92, 74, 0.08);
+  border-color: rgb(var(--accent-rgb) / 0.5);
+  box-shadow: 0 0 0 3px rgb(var(--accent-rgb) / 0.08);
 }
 
 .divider {

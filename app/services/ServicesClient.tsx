@@ -110,24 +110,24 @@ export default function ServicesPageClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="rounded-2xl p-8 border bg-white border-grey-DEFAULT/60 flex flex-col"
+              className="rounded-2xl p-8 border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] flex flex-col"
             >
-              <div className="w-11 h-11 rounded-2xl bg-green-DEFAULT/10 border border-green-DEFAULT/20 flex items-center justify-center text-green-light mb-5">
+              <div className="w-11 h-11 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-5">
                 {service.icon}
               </div>
 
-              <span className="text-xs font-grotesk font-semibold text-green-light uppercase tracking-widest mb-2 block">
+              <span className="text-xs font-grotesk font-semibold text-accent uppercase tracking-widest mb-2 block">
                 {service.label}
               </span>
 
-              <h3 className="font-grotesk font-bold text-navy-DEFAULT text-xl mb-2">{service.title}</h3>
+              <h3 className="font-grotesk font-bold text-heading text-xl mb-2">{service.title}</h3>
 
-              <p className="text-navy-DEFAULT/60 text-sm mb-7 leading-relaxed">{service.description}</p>
+              <p className="text-muted text-sm mb-7 leading-relaxed">{service.description}</p>
 
               <ul className="space-y-3 mb-8 flex-1">
                 {service.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-sm text-navy-DEFAULT/60">
-                    <ArrowUpRight size={14} className="text-green-light flex-shrink-0 rotate-45" />
+                  <li key={f} className="flex items-center gap-2 text-sm text-muted">
+                    <ArrowUpRight size={14} className="text-accent flex-shrink-0 rotate-45" />
                     {f}
                   </li>
                 ))}
@@ -162,22 +162,22 @@ export default function ServicesPageClient() {
               transition={{ delay: i * 0.12 }}
               className={`rounded-2xl p-8 border flex flex-col ${
                 plan.highlighted
-                  ? 'bg-green-DEFAULT/10 border-green-DEFAULT/50 glow-green'
-                  : 'bg-white border-grey-DEFAULT/60'
+                  ? 'bg-accent/10 border-accent/50 glow-green'
+                  : 'border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02]'
               }`}
             >
               {plan.highlighted && (
-                <span className="inline-block text-xs font-grotesk font-semibold text-green-light uppercase tracking-widest mb-4 px-3 py-1 bg-green-DEFAULT/10 border border-green-DEFAULT/20 rounded-full w-fit">
+                <span className="inline-block text-xs font-grotesk font-semibold text-accent uppercase tracking-widest mb-4 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full w-fit">
                   Most popular
                 </span>
               )}
-              <h3 className="font-grotesk font-bold text-navy-DEFAULT text-xl mb-1">{plan.name}</h3>
-              <p className="text-3xl font-bold text-navy-DEFAULT mb-2 mt-3">{plan.price}</p>
-              <p className="text-navy-DEFAULT/60 text-sm mb-7 leading-relaxed">{plan.description}</p>
+              <h3 className="font-grotesk font-bold text-heading text-xl mb-1">{plan.name}</h3>
+              <p className="text-3xl font-bold text-heading mb-2 mt-3">{plan.price}</p>
+              <p className="text-muted text-sm mb-7 leading-relaxed">{plan.description}</p>
               <ul className="space-y-3 mb-8 flex-1">
                 {plan.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-sm text-navy-DEFAULT/60">
-                    <ArrowUpRight size={14} className="text-green-light flex-shrink-0 rotate-45" />
+                  <li key={f} className="flex items-center gap-2 text-sm text-muted">
+                    <ArrowUpRight size={14} className="text-accent flex-shrink-0 rotate-45" />
                     {f}
                   </li>
                 ))}
@@ -193,7 +193,7 @@ export default function ServicesPageClient() {
             </motion.div>
           ))}
         </div>
-        <p className="text-center text-navy-DEFAULT/60 text-sm mt-8">
+        <p className="text-center text-muted text-sm mt-8">
           All prices are starting rates. Final quotes depend on scope and complexity.
         </p>
       </section>

@@ -12,36 +12,36 @@ const pages = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#060A19', borderTop: '1px solid rgba(255,255,255,0.06)' }} className="mt-32">
+    <footer className="mt-32 bg-dark" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-5">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: '#0F5C4A' }}>
-                <span className="text-white font-bold text-xs" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>IZ</span>
+              <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
+                <span className="font-grotesk text-white font-bold text-xs">IZ</span>
               </div>
-              <span className="font-bold text-white text-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>IZMVH</span>
+              <span className="font-grotesk font-bold text-white text-lg">IZMVH</span>
             </div>
             <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px', lineHeight: '1.7' }} className="mb-6">
               Building exceptional digital experiences for businesses that want to grow online.
             </p>
             <div className="flex flex-col gap-3">
               <a href="mailto:iza.vuyo@izmvh.co.za" className="flex items-center gap-2 hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
-                <Mail size={14} style={{ color: '#1A8C6B' }} /> iza.vuyo@izmvh.co.za
+                <Mail size={14} className="text-accent" /> iza.vuyo@izmvh.co.za
               </a>
               <a href="tel:+27000000000" className="flex items-center gap-2 hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
-                <Phone size={14} style={{ color: '#1A8C6B' }} /> 063 481 1469
+                <Phone size={14} className="text-accent" /> 063 481 1469
               </a>
               <span className="flex items-center gap-2" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
-                <MapPin size={14} style={{ color: '#1A8C6B' }} /> Gqeberha, South Africa
+                <MapPin size={14} className="text-accent" /> Gqeberha, South Africa
               </span>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-white text-sm mb-5 tracking-widest uppercase" style={{ fontFamily: 'Space Grotesk, sans-serif', color: '#1A8C6B' }}>Services</h4>
+            <h4 className="font-grotesk font-semibold text-accent text-sm mb-5 tracking-widest uppercase">Services</h4>
             <ul className="flex flex-col gap-3">
               {services.map((s) => (
                 <li key={s}>
@@ -53,7 +53,7 @@ export default function Footer() {
 
           {/* Pages */}
           <div>
-            <h4 className="font-semibold text-sm mb-5 tracking-widest uppercase" style={{ fontFamily: 'Space Grotesk, sans-serif', color: '#1A8C6B' }}>Company</h4>
+            <h4 className="font-grotesk font-semibold text-accent text-sm mb-5 tracking-widest uppercase">Company</h4>
             <ul className="flex flex-col gap-3">
               {pages.map((p) => (
                 <li key={p.href}>
@@ -64,15 +64,14 @@ export default function Footer() {
           </div>
 
           {/* CTA Block */}
-          <div className="rounded-2xl p-6" style={{ background: 'rgba(15,92,74,0.15)', border: '1px solid rgba(15,92,74,0.3)' }}>
-            <h4 className="font-semibold text-white mb-3" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Ready to start?</h4>
+          <div className="rounded-2xl p-6 bg-accent/[0.15] border border-accent/30">
+            <h4 className="font-grotesk font-semibold text-white mb-3">Ready to start?</h4>
             <p className="text-sm mb-5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
               Let&apos;s build something remarkable together.
             </p>
             <Link
               href="/quote"
-              className="flex items-center gap-2 text-white text-sm font-medium rounded-lg transition-all duration-200 w-fit px-5 py-3"
-              style={{ background: '#0F5C4A' }}
+              className="flex items-center gap-2 bg-accent text-black text-sm font-medium rounded-lg transition-all duration-200 w-fit px-5 py-3"
             >
               Get a Quote <ArrowUpRight size={14} />
             </Link>

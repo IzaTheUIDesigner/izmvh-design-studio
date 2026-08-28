@@ -14,7 +14,7 @@ module.exports = {
         'border': '#E5E0D8',
         dark: '#040404',
         accent: {
-          DEFAULT: '#00aaff',
+          DEFAULT: '#FF4D1C',
         },
         heading: '#F9F9F9',
         muted: '#8E8E8E',
@@ -54,6 +54,7 @@ module.exports = {
       backgroundImage: {
         'green-glow': 'radial-gradient(ellipse at center, rgba(15,92,74,0.08) 0%, transparent 70%)',
         'hero-gradient': 'radial-gradient(ellipse at 50% 0%, rgba(15,92,74,0.08) 0%, transparent 60%)',
+        'accent-glow': 'radial-gradient(ellipse at center, rgb(var(--accent-rgb) / 0.08) 0%, transparent 70%)',
       }
     },
   },

@@ -37,10 +37,10 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-green-DEFAULT flex items-center justify-center glow-green-sm transition-all duration-300 group-hover:glow-green">
-              <span className="text-navy-DEFAULT font-bold text-xs font-grotesk tracking-wider">IZ</span>
+            <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center glow-green-sm transition-all duration-300 group-hover:glow-green">
+              <span className="text-black font-bold text-xs font-grotesk tracking-wider">IZ</span>
             </div>
-            <span className="font-grotesk font-bold text-navy-DEFAULT text-lg tracking-tight">IZMVH</span>
+            <span className="font-grotesk font-bold text-heading text-lg tracking-tight">IZMVH</span>
           </Link>
 
           {/* Desktop Links */}
@@ -50,7 +50,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors duration-200 ${
-                  pathname === link.href ? 'text-green-DEFAULT' : 'text-navy-DEFAULT/70 hover:text-navy-DEFAULT'
+                  pathname === link.href ? 'text-accent' : 'text-muted hover:text-heading'
                 }`}
               >
                 {link.label}
@@ -62,14 +62,14 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/quote"
-              className="px-5 py-2.5 bg-green-DEFAULT hover:bg-green-light text-navy-DEFAULT text-sm font-medium rounded-lg transition-all duration-200 glow-green-sm hover:glow-green"
+              className="px-5 py-2.5 bg-accent hover:bg-accent/90 text-black text-sm font-medium rounded-lg transition-all duration-200 glow-green-sm hover:glow-green"
             >
               Get a Quote
             </Link>
           </div>
 
           {/* Mobile Toggle */}
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-navy-DEFAULT p-2" aria-label="Toggle menu">
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-heading p-2" aria-label="Toggle menu">
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </nav>
@@ -83,8 +83,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 flex flex-col"
-            style={{ background: '#F5F0E8' }}
+            className="fixed inset-0 z-40 flex flex-col bg-dark"
           >
             <div className="flex flex-col gap-8 pt-32 px-8">
               {navLinks.map((link, i) => (
@@ -97,7 +96,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className={`text-3xl font-bold font-grotesk transition-colors ${
-                      pathname === link.href ? 'text-green-DEFAULT' : 'text-navy-DEFAULT/70 hover:text-navy-DEFAULT'
+                      pathname === link.href ? 'text-accent' : 'text-muted hover:text-heading'
                     }`}
                   >
                     {link.label}
@@ -105,7 +104,7 @@ export default function Navbar() {
                 </motion.div>
               ))}
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.36 }}>
-                <Link href="/quote" className="inline-block mt-4 px-8 py-4 bg-green-DEFAULT text-navy-DEFAULT font-semibold rounded-xl text-lg glow-green">
+                <Link href="/quote" className="inline-block mt-4 px-8 py-4 bg-accent text-black font-semibold rounded-xl text-lg glow-green">
                   Get a Quote →
                 </Link>
               </motion.div>

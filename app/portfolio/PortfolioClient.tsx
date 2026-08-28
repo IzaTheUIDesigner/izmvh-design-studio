@@ -15,7 +15,7 @@ const projects = [
     category: 'EdTech',
     description: 'A multi-tenant venue and event management SaaS platform built for South African public universities. Features AI-driven scheduling, sustainability analytics, and white-label deployment across 26 institutions.',
     tags: ['Next.js', 'PostgreSQL', 'Node.js', 'Railway', 'Vercel'],
-    gradient: 'bg-gradient-to-br from-green-900/60 via-slate-800 to-slate-900',
+    gradient: 'bg-gradient-to-br from-slate-800 via-slate-800 to-slate-900',
     image:'',
     duration: 'Ongoing',
   },
@@ -25,7 +25,7 @@ const projects = [
     category: 'Web Design',
     description: 'A professional website for a law firm focused on credibility, trust, and client conversion.',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    gradient: 'bg-gradient-to-br from-slate-700 via-slate-800 to-green-dark',
+    gradient: 'bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900',
     image: '/images/harrison.png',
     duration: '',
   },
@@ -85,8 +85,8 @@ export default function PortfolioPageClient() {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                 activeCategory === cat
-                  ? 'bg-green-DEFAULT text-white glow-green-sm'
-                  : 'bg-white border border-grey-DEFAULT/60 text-navy-DEFAULT/60 hover:text-navy-DEFAULT'
+                  ? 'bg-accent text-black glow-green-sm'
+                  : 'border border-white/10 text-muted hover:text-heading hover:border-white/20'
               }`}
             >
               {cat}
@@ -106,7 +106,7 @@ export default function PortfolioPageClient() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="group bg-white border border-grey-DEFAULT/60 rounded-2xl overflow-hidden card-hover"
+                className="group border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl overflow-hidden card-hover"
               >
                 <div className={`h-52 relative overflow-hidden ${project.gradient}`}>
                   {project.image ? (
@@ -124,23 +124,23 @@ export default function PortfolioPageClient() {
 
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-grotesk font-semibold uppercase tracking-widest text-green-DEFAULT">
+                    <span className="text-xs font-grotesk font-semibold uppercase tracking-widest text-accent">
                       {project.category}
                     </span>
-                    <span className="text-xs text-navy-DEFAULT/60">{project.duration}</span>
+                    <span className="text-xs text-muted">{project.duration}</span>
                   </div>
-                  <h3 className="font-grotesk font-bold text-xl text-navy-DEFAULT mb-2 group-hover:text-green-DEFAULT transition-colors">
+                  <h3 className="font-grotesk font-bold text-xl text-heading mb-2 group-hover:text-accent transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-navy-DEFAULT/60 text-sm leading-relaxed mb-4">{project.description}</p>
+                  <p className="text-muted text-sm leading-relaxed mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-1.5 mb-5">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="text-xs px-2.5 py-1 bg-grey-DEFAULT border border-grey-DEFAULT/60 rounded-full text-navy-DEFAULT/60">
+                      <span key={tag} className="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-muted">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <button className="inline-flex items-center gap-1.5 text-sm text-navy-DEFAULT/40 font-medium group-hover:text-green-DEFAULT group-hover:gap-2.5 transition-all">
+                  <button className="inline-flex items-center gap-1.5 text-sm text-muted font-medium group-hover:text-accent group-hover:gap-2.5 transition-all">
                     View Case Study <ArrowUpRight size={14} />
                   </button>
                 </div>
@@ -151,11 +151,11 @@ export default function PortfolioPageClient() {
       </section>
 
       <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto bg-white border border-green-DEFAULT/20 rounded-3xl p-12 text-center glow-green">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-DEFAULT mb-4">
+        <div className="max-w-3xl mx-auto border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-3xl p-12 text-center glow-green">
+          <h2 className="text-3xl md:text-4xl font-bold text-heading mb-4">
             Want to see your project here?
           </h2>
-          <p className="text-navy-DEFAULT/60 mb-8 leading-relaxed">
+          <p className="text-muted mb-8 leading-relaxed">
             Let&apos;s build something you&apos;re proud to show off.
           </p>
           <Button href="/quote" size="lg" arrow>

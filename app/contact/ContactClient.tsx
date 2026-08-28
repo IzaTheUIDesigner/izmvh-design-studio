@@ -76,24 +76,24 @@ export default function ContactPageClient() {
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Left – Contact Info */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="bg-white border border-grey-DEFAULT/60 rounded-2xl p-8">
-              <h3 className="font-grotesk font-semibold text-navy-DEFAULT text-lg mb-6">Get in touch</h3>
+            <div className="border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8">
+              <h3 className="font-grotesk font-semibold text-heading text-lg mb-6">Get in touch</h3>
               <div className="space-y-5">
                 {contactInfo.map((item) => (
                   <div key={item.label} className="flex items-start gap-4">
-                    <div className="w-9 h-9 rounded-lg bg-green-DEFAULT/10 border border-green-DEFAULT/20 flex items-center justify-center text-green-light flex-shrink-0 mt-0.5">
+                    <div className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5">
                       {item.icon}
                     </div>
                     <div>
-                      <p className="text-xs font-grotesk font-semibold text-navy-DEFAULT/60 uppercase tracking-wider mb-1">
+                      <p className="text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-1">
                         {item.label}
                       </p>
                       {item.href ? (
-                        <a href={item.href} className="text-navy-DEFAULT text-sm hover:text-green-light transition-colors">
+                        <a href={item.href} className="text-heading text-sm hover:text-accent transition-colors">
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-navy-DEFAULT text-sm">{item.value}</p>
+                        <p className="text-heading text-sm">{item.value}</p>
                       )}
                     </div>
                   </div>
@@ -101,9 +101,9 @@ export default function ContactPageClient() {
               </div>
             </div>
 
-            <div className="bg-white border border-green-DEFAULT/20 rounded-2xl p-8 glow-green-sm">
-              <h3 className="font-grotesk font-semibold text-navy-DEFAULT text-base mb-3">Prefer a structured brief?</h3>
-              <p className="text-navy-DEFAULT/60 text-sm leading-relaxed mb-5">
+            <div className="border border-accent/20 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8 glow-green-sm">
+              <h3 className="font-grotesk font-semibold text-heading text-base mb-3">Prefer a structured brief?</h3>
+              <p className="text-muted text-sm leading-relaxed mb-5">
                 Use our detailed quote form to walk through your project requirements step by step.
               </p>
               <Button href="/quote" arrow>
@@ -114,18 +114,18 @@ export default function ContactPageClient() {
 
           {/* Right – Contact Form */}
           <div className="lg:col-span-3">
-            <div className="bg-white border border-grey-DEFAULT/60 rounded-2xl p-8">
+            <div className="border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="flex flex-col items-center justify-center py-16 text-center"
                 >
-                  <div className="w-16 h-16 rounded-full bg-green-DEFAULT/20 border border-green-DEFAULT/30 flex items-center justify-center mb-6 glow-green">
-                    <CheckCircle size={32} className="text-green-light" />
+                  <div className="w-16 h-16 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center mb-6 glow-green">
+                    <CheckCircle size={32} className="text-accent" />
                   </div>
-                  <h3 className="font-grotesk font-bold text-navy-DEFAULT text-2xl mb-3">Message sent!</h3>
-                  <p className="text-navy-DEFAULT/60 leading-relaxed max-w-sm">
+                  <h3 className="font-grotesk font-bold text-heading text-2xl mb-3">Message sent!</h3>
+                  <p className="text-muted leading-relaxed max-w-sm">
                     Thanks for reaching out. We&apos;ll review your message and get back to you within 48 hours.
                   </p>
                 </motion.div>
@@ -133,7 +133,7 @@ export default function ContactPageClient() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-grotesk font-semibold text-navy-DEFAULT/60 uppercase tracking-wider mb-2">
+                      <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">
                         Full Name *
                       </label>
                       <input
@@ -146,7 +146,7 @@ export default function ContactPageClient() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-grotesk font-semibold text-navy-DEFAULT/60 uppercase tracking-wider mb-2">
+                      <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">
                         Email Address *
                       </label>
                       <input
@@ -160,7 +160,7 @@ export default function ContactPageClient() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-grotesk font-semibold text-navy-DEFAULT/60 uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">
                       Company / Organisation
                     </label>
                     <input
@@ -173,7 +173,7 @@ export default function ContactPageClient() {
                   </div>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-grotesk font-semibold text-navy-DEFAULT/60 uppercase tracking-wider mb-2">
+                      <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">
                         Project Type
                       </label>
                       <select
@@ -183,12 +183,12 @@ export default function ContactPageClient() {
                       >
                         <option value="" disabled>Select type</option>
                         {projectTypes.map((t) => (
-                          <option key={t} value={t} className="bg-white">{t}</option>
+                          <option key={t} value={t} className="bg-dark">{t}</option>
                         ))}
                       </select>
                     </div>
                     <div>
-                      <label className="block text-xs font-grotesk font-semibold text-navy-DEFAULT/60 uppercase tracking-wider mb-2">
+                      <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">
                         Budget Range
                       </label>
                       <select
@@ -198,13 +198,13 @@ export default function ContactPageClient() {
                       >
                         <option value="" disabled>Select budget</option>
                         {budgets.map((b) => (
-                          <option key={b} value={b} className="bg-white">{b}</option>
+                          <option key={b} value={b} className="bg-dark">{b}</option>
                         ))}
                       </select>
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-grotesk font-semibold text-navy-DEFAULT/60 uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">
                       Message *
                     </label>
                     <textarea

@@ -72,13 +72,13 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white border border-grey-DEFAULT/60 rounded-xl p-5 hover:border-green-DEFAULT/30 transition-colors"
+                className="border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-xl p-5 hover:border-accent/30 transition-colors"
               >
-                <div className="w-9 h-9 rounded-lg bg-green-DEFAULT/10 border border-green-DEFAULT/20 flex items-center justify-center text-green-light mb-4">
+                <div className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-4">
                   {item.icon}
                 </div>
-                <h3 className="font-grotesk font-semibold text-navy-DEFAULT text-sm mb-1.5">{item.title}</h3>
-                <p className="text-navy-DEFAULT/60 text-xs leading-relaxed">{item.desc}</p>
+                <h3 className="font-grotesk font-semibold text-heading text-sm mb-1.5">{item.title}</h3>
+                <p className="text-muted text-xs leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -125,7 +125,7 @@ export default function HomePage() {
         />
         <div className="grid md:grid-cols-4 gap-0 relative">
           {/* Connecting line */}
-          <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-green-DEFAULT/30 to-transparent" />
+          <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
           {process.map((step, i) => (
             <motion.div
               key={step.title}
@@ -135,11 +135,11 @@ export default function HomePage() {
               transition={{ delay: i * 0.12 }}
               className="text-center px-6 py-8 relative"
             >
-              <div className="w-14 h-14 rounded-full bg-green-dark border border-green-DEFAULT/30 flex items-center justify-center mx-auto mb-5 relative z-10">
-                <span className="font-grotesk font-bold text-green-light text-sm">0{i + 1}</span>
+              <div className="w-14 h-14 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center mx-auto mb-5 relative z-10">
+                <span className="font-grotesk font-bold text-accent text-sm">0{i + 1}</span>
               </div>
-              <h3 className="font-grotesk font-semibold text-navy-DEFAULT text-lg mb-2">{step.title}</h3>
-              <p className="text-navy-DEFAULT/60 text-sm leading-relaxed">{step.desc}</p>
+              <h3 className="font-grotesk font-semibold text-heading text-lg mb-2">{step.title}</h3>
+              <p className="text-muted text-sm leading-relaxed">{step.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -151,17 +151,17 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-navy-DEFAULT/80 border border-green-DEFAULT/25 rounded-3xl p-12 md:p-16 text-center relative overflow-hidden glow-green"
+          className="max-w-4xl mx-auto text-muted border border-accent/25 rounded-3xl p-12 md:p-16 text-center relative overflow-hidden glow-green"
         >
-          <div className="absolute inset-0 bg-green-glow opacity-30 pointer-events-none" />
-          <span className="inline-block font-grotesk text-xs font-semibold uppercase tracking-widest text-green-light mb-5 px-3 py-1 bg-green-DEFAULT/10 border border-green-DEFAULT/20 rounded-full">
+          <div className="absolute inset-0 bg-accent-glow opacity-30 pointer-events-none" />
+          <span className="inline-block font-grotesk text-xs font-semibold uppercase tracking-widest text-accent mb-5 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full">
             Start your project
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-DEFAULT leading-tight tracking-tight mb-5">
+          <h2 className="text-4xl md:text-5xl font-bold text-heading leading-tight tracking-tight mb-5">
             Ready to build something{' '}
             <span className="text-gradient-green">remarkable?</span>
           </h2>
-          <p className="text-navy-DEFAULT/60 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+          <p className="text-muted text-lg mb-10 max-w-xl mx-auto leading-relaxed">
             Tell us about your project and we&apos;ll put together a tailored proposal within 48 hours.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

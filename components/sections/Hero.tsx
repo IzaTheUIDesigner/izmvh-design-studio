@@ -46,7 +46,7 @@ export default function Hero() {
           >
             <div
               className="absolute inset-0"
-              style={{ background: 'linear-gradient(160deg, rgba(0,170,255,0.14) 0%, rgba(4,4,4,0.94) 70%)' }}
+              style={{ background: 'linear-gradient(160deg, rgb(var(--accent-rgb) / 0.14) 0%, rgba(4,4,4,0.94) 70%)' }}
             />
             <div
               className="absolute inset-0 opacity-30"
@@ -59,7 +59,7 @@ export default function Hero() {
             <motion.div
               className="absolute w-40 h-40 rounded-full"
               style={{
-                background: 'radial-gradient(circle, rgba(0,170,255,0.35) 0%, transparent 70%)',
+                background: 'radial-gradient(circle, rgb(var(--accent-rgb) / 0.35) 0%, transparent 70%)',
                 top: '28%',
                 left: '28%',
               }}
@@ -142,7 +142,7 @@ export default function Hero() {
                 </div>
                 <div
                   className="absolute inset-0 opacity-70 pointer-events-none"
-                  style={{ background: 'radial-gradient(circle at 70% 100%, rgba(0,170,255,0.25) 0%, transparent 60%)' }}
+                  style={{ background: 'radial-gradient(circle at 70% 100%, rgb(var(--accent-rgb) / 0.25) 0%, transparent 60%)' }}
                 />
                 <motion.div
                   className="absolute -bottom-16 -right-10 w-48 h-48 rounded-full border border-accent/20"
