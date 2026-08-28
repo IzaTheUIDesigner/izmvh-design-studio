@@ -3,7 +3,9 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import MoonLayer from '@/components/MoonLayer'
 import SunLayer from '@/components/SunLayer'
+import ShootingStars from '@/components/ShootingStars'
 
 const THEME_SCRIPT = `
 (function () {
@@ -48,6 +50,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <SunLayer />
+        <MoonLayer />
+        <ShootingStars />
         <div className="relative z-10">
           <Navbar />
           <main>{children}</main>
