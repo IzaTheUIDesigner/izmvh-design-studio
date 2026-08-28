@@ -41,7 +41,7 @@ function createStar(id: number): Star {
 }
 
 /**
- * Occasional shooting stars for the night theme, mounted alongside MoonLayer (fixed,
+ * Occasional shooting stars for the night theme, mounted at the root layout (fixed,
  * z-0, pointer-events-none, behind all content). Fires roughly every 8-15s with
  * randomized position/angle/timing, capped at MAX_CONCURRENT so it never feels busy.
  * Skips entirely under prefers-reduced-motion and outside the night theme, rather than

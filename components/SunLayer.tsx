@@ -4,8 +4,8 @@ import { motion, useReducedMotion } from 'framer-motion'
 
 /**
  * Ambient background glow for the day theme, mounted once at the root layout, sitting
- * behind all page content (fixed, z-0, pointer-events-none). Day-theme only — MoonLayer
- * takes over the same role at night, so this stays hidden there rather than overlapping it.
+ * behind all page content (fixed, z-0, pointer-events-none). Day-theme only — stays
+ * hidden at night rather than showing on the dark background.
  */
 export default function SunLayer() {
   const reduceMotion = useReducedMotion()
