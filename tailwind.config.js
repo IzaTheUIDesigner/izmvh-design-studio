@@ -12,6 +12,12 @@ module.exports = {
         'surface': '#FFFFFF',
         'surface-2': '#F5F0E8',
         'border': '#E5E0D8',
+        dark: '#040404',
+        accent: {
+          DEFAULT: '#00aaff',
+        },
+        heading: '#F9F9F9',
+        muted: '#8E8E8E',
         green: {
           DEFAULT: '#0F5C4A',
           dark: '#0D3D2E',
@@ -29,8 +35,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        grotesk: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        sans: ['DM Sans', 'system-ui', 'sans-serif'],
+        grotesk: ['DM Sans', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease forwards',

@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 :root {
+  --dark: #040404;
+  --accent: #00aaff;
+  --muted: #8E8E8E;
+  --heading: #F9F9F9;
   --green: #0F5C4A;
   --navy: #12183A;
   --cream: #F5F0E8;
@@ -19,22 +23,22 @@ html {
 }
 
 body {
-  background-color: #FFFFFF;
-  color: #12183A;
-  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--dark);
+  color: var(--muted);
+  font-family: 'DM Sans', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(15, 92, 74, 0.2);
-  color: #12183A;
+  background: rgba(0, 170, 255, 0.25);
+  color: var(--heading);
 }
 
 ::-webkit-scrollbar { width: 4px; }
-::webkit-scrollbar-track { background: #FFFFFF; }
-::-webkit-scrollbar-thumb { background: #0F5C4A; border-radius: 2px; }
+::webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
 
 .glass-nav {
   background: rgba(255, 255, 255, 0.85);

@@ -4,19 +4,13 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import {
   Globe, ShoppingBag, Wrench, Palette, CheckCircle,
-  ArrowUpRight, Zap, Shield, TrendingUp, Star
+  Zap, Shield, TrendingUp
 } from 'lucide-react'
-import AnimatedBackground from '@/components/AnimatedBackground'
+import Hero from '@/components/sections/Hero'
+import Projects from '@/components/sections/Projects'
 import ServiceCard from '@/components/ServiceCard'
-import PortfolioCard from '@/components/PortfolioCard'
-import TestimonialCard from '@/components/TestimonialCard'
 import SectionHeading from '@/components/SectionHeading'
 import Button from '@/components/Button'
-
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0 },
-}
 
 const services = [
   {
@@ -45,54 +39,6 @@ const services = [
   },
 ]
 
-const projects = [
-  {
-    title: 'Harrison Law Firm',
-    category: 'Web Design',
-    description: 'A professional website for a law firm focused on credibility, trust, and client conversion.',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    gradient: 'bg-gradient-to-br from-slate-700 via-slate-800 to-green-dark',
-    image: '/images/harrison.png',
-  },
-  {
-    title: 'Northfield E-commerce',
-    category: 'E-commerce',
-    description: 'Full e-commerce build for Northfield with seamless checkout and PayFast integration.',
-    tags: ['Shopify', 'Liquid', 'PayFast'],
-    gradient: 'bg-gradient-to-br from-rose-900/60 via-slate-800 to-slate-900',
-    image: '/images/northfield.png',
-  },
-  {
-    title: 'Thynk Unlimited',
-    category: 'Web Design',
-    description: 'A modern website for Thynk Unlimited with a focus on brand identity and user experience.',
-    tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-    gradient: 'bg-gradient-to-br from-blue-900/40 via-slate-800 to-slate-900',
-    image: '/images/thynkunlimited.png',
-  },
-]
-
-const testimonials = [
-  {
-    quote: "IZMVH completely transformed our online presence. The site they built has directly increased our enquiries by 60%. Exceptional work from start to finish.",
-    author: "Thando Nkosi",
-    role: "CEO",
-    company: "Nkosi Consulting",
-  },
-  {
-    quote: "The attention to detail and communication throughout the project was world-class. Our new e-commerce store looks better than anything our competitors have.",
-    author: "Sarah van der Berg",
-    role: "Founder",
-    company: "Bloom Boutique",
-  },
-  {
-    quote: "They understood our vision immediately and delivered beyond our expectations. Professional, fast, and genuinely invested in our success.",
-    author: "Lungelo Dlamini",
-    role: "Marketing Director",
-    company: "Apex Group",
-  },
-]
-
 const process = [
   { title: 'Discovery', desc: 'We dig deep into your goals, audience, and competitors to form a strategic brief.' },
   { title: 'Design', desc: 'Custom UI concepts built around your brand — refined until they are exactly right.' },
@@ -100,128 +46,10 @@ const process = [
   { title: 'Launch', desc: 'Full deployment, testing, and handover — with ongoing support available from day one.' },
 ]
 
-const stats = [
-  { value: '50+', label: 'Projects delivered' },
-  { value: '98%', label: 'Client satisfaction' },
-  { value: '3×', label: 'Avg. traffic increase' },
-  { value: '48h', label: 'Response guarantee' },
-]
-
 export default function HomePage() {
   return (
     <>
-      {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden">
-        <AnimatedBackground />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <motion.div
-              variants={fadeUp}
-              initial="initial"
-              animate="animate"
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-green-DEFAULT/10 border border-green-DEFAULT/25 rounded-full mb-8"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-green-light animate-pulse" />
-              <span className="text-xs font-grotesk font-semibold text-green-light uppercase tracking-widest">
-                Available for new projects
-              </span>
-            </motion.div>
-
-            {/* Headline */}
-            <motion.h1
-              variants={fadeUp}
-              initial="initial"
-              animate="animate"
-              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy-DEFAULT leading-[1.06] tracking-tight mb-7"
-            >
-              Designing Digital{' '}
-              <span className="text-gradient-green">Experiences</span>{' '}
-              That Grow Businesses.
-            </motion.h1>
-
-            {/* Subheadline */}
-            <motion.p
-              variants={fadeUp}
-              initial="initial"
-              animate="animate"
-              transition={{ duration: 0.6, delay: 0.22 }}
-              className="text-navy-DEFAULT/60 text-xl leading-relaxed mb-10 max-w-2xl"
-            >
-              We create modern websites, e-commerce solutions, and provide ongoing maintenance
-              that helps businesses thrive online.
-            </motion.p>
-
-            {/* CTAs */}
-            <motion.div
-              variants={fadeUp}
-              initial="initial"
-              animate="animate"
-              transition={{ duration: 0.5, delay: 0.33 }}
-              className="flex flex-wrap items-center gap-4"
-            >
-              <Button href="/quote" size="lg" arrow>
-                Get a Quote
-              </Button>
-              <Button href="/portfolio" variant="secondary" size="lg">
-                View Portfolio
-              </Button>
-            </motion.div>
-
-            {/* Social proof */}
-            <motion.div
-              variants={fadeUp}
-              initial="initial"
-              animate="animate"
-              transition={{ duration: 0.5, delay: 0.44 }}
-              className="flex items-center gap-6 mt-12"
-            >
-              <div className="flex -space-x-2">
-                {['T', 'S', 'L', 'A'].map((l, i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 rounded-full bg-green-dark border-2 border-black flex items-center justify-center text-green-light text-xs font-bold font-grotesk"
-                  >
-                    {l}
-                  </div>
-                ))}
-              </div>
-              <div>
-                <div className="flex items-center gap-1 mb-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={12} className="text-yellow-400 fill-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-xs text-navy-DEFAULT/60">Trusted by 50+ businesses</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── STATS ────────────────────────────────────────────── */}
-      <section className="py-16 border-y border-grey-DEFAULT/60">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="text-center"
-              >
-                <p className="text-4xl font-bold font-grotesk text-navy-DEFAULT mb-1">{s.value}</p>
-                <p className="text-navy-DEFAULT/60 text-sm">{s.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* ── WHY IZMVH ────────────────────────────────────────── */}
       <section className="py-28 max-w-7xl mx-auto px-6">
@@ -282,40 +110,7 @@ export default function HomePage() {
 
       <div className="divider" />
 
-      {/* ── PORTFOLIO ────────────────────────────────────────── */}
-      <section className="py-28 max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-14">
-          <SectionHeading
-            label="Portfolio"
-            title={"Recent work\nthat speaks for itself."}
-          />
-          <Button href="/portfolio" variant="ghost" arrow>
-            View all projects
-          </Button>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {projects.map((p, i) => (
-            <PortfolioCard key={p.title} {...p} index={i} />
-          ))}
-        </div>
-      </section>
-
-      <div className="divider" />
-
-      {/* ── TESTIMONIALS ─────────────────────────────────────── */}
-      <section className="py-28 max-w-7xl mx-auto px-6">
-        <SectionHeading
-          label="Testimonials"
-          title="Clients who trusted us."
-          centered
-          className="mb-14"
-        />
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <TestimonialCard key={t.author} {...t} index={i} />
-          ))}
-        </div>
-      </section>
+      <Projects />
 
       <div className="divider" />
 
