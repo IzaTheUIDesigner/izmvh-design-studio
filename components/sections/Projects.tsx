@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 
-const panel = 'border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02]'
+const panel = 'border border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02]'
 
 const categories = ['Web Design', 'E-commerce', 'UI/UX', 'EdTech']
 
@@ -73,7 +73,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
 
       <span
         aria-hidden
-        className="absolute right-5 bottom-5 w-8 h-8 flex items-center justify-center border border-white/10 text-muted transition-colors group-hover:text-accent group-hover:border-accent/30"
+        className="absolute right-5 bottom-5 w-8 h-8 flex items-center justify-center border border-white/10 day:border-black/10 text-muted transition-colors group-hover:text-accent group-hover:border-accent/30"
       >
         <ArrowUpRight size={14} />
       </span>
@@ -89,7 +89,7 @@ export default function Projects() {
         <div className={`flex items-center gap-4 p-3 mb-4 ${panel}`}>
           <Link
             href="/portfolio"
-            className="group flex items-center gap-2 px-5 py-3 border border-white/10 text-heading text-[13px] whitespace-nowrap shrink-0 transition-colors hover:border-accent/40"
+            className="group flex items-center gap-2 px-5 py-3 border border-white/10 day:border-black/10 text-heading text-[13px] whitespace-nowrap shrink-0 transition-colors hover:border-accent/40"
           >
             View all projects
             <ArrowUpRight size={14} className="text-accent transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -76,7 +76,7 @@ export default function ContactPageClient() {
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Left – Contact Info */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8">
+            <div className="border border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8">
               <h3 className="font-grotesk font-semibold text-heading text-lg mb-6">Get in touch</h3>
               <div className="space-y-5">
                 {contactInfo.map((item) => (
@@ -114,7 +114,7 @@ export default function ContactPageClient() {
 
           {/* Right – Contact Form */}
           <div className="lg:col-span-3">
-            <div className="border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8">
+            <div className="border border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}

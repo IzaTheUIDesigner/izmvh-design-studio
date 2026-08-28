@@ -110,7 +110,7 @@ export default function ServicesPageClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="rounded-2xl p-8 border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] flex flex-col"
+              className="rounded-2xl p-8 border border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] flex flex-col"
             >
               <div className="w-11 h-11 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-5">
                 {service.icon}
@@ -163,7 +163,7 @@ export default function ServicesPageClient() {
               className={`rounded-2xl p-8 border flex flex-col ${
                 plan.highlighted
                   ? 'bg-accent/10 border-accent/50 glow-green'
-                  : 'border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02]'
+                  : 'border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02]'
               }`}
             >
               {plan.highlighted && (

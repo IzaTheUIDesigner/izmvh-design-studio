@@ -86,7 +86,7 @@ export default function PortfolioPageClient() {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                 activeCategory === cat
                   ? 'bg-accent text-black glow-green-sm'
-                  : 'border border-white/10 text-muted hover:text-heading hover:border-white/20'
+                  : 'border border-white/10 day:border-black/10 text-muted hover:text-heading hover:border-white/20 day:hover:border-black/20'
               }`}
             >
               {cat}
@@ -106,7 +106,7 @@ export default function PortfolioPageClient() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="group border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl overflow-hidden card-hover"
+                className="group border border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl overflow-hidden card-hover"
               >
                 <div className={`h-52 relative overflow-hidden ${project.gradient}`}>
                   {project.image ? (
@@ -135,7 +135,7 @@ export default function PortfolioPageClient() {
                   <p className="text-muted text-sm leading-relaxed mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-1.5 mb-5">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-muted">
+                      <span key={tag} className="text-xs px-2.5 py-1 bg-white/5 day:bg-black/5 border border-white/10 day:border-black/10 rounded-full text-muted">
                         {tag}
                       </span>
                     ))}
@@ -151,7 +151,7 @@ export default function PortfolioPageClient() {
       </section>
 
       <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-3xl p-12 text-center glow-green">
+        <div className="max-w-3xl mx-auto border border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-3xl p-12 text-center glow-green">
           <h2 className="text-3xl md:text-4xl font-bold text-heading mb-4">
             Want to see your project here?
           </h2>

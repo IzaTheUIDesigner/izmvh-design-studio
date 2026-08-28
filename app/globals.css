@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  /* Night theme (default). Accent is identical in both themes by design. */
   --dark: #040404;
   --accent: #FF4D1C;
   --accent-rgb: 255 77 28;
@@ -11,6 +12,14 @@
   --green: #0F5C4A;
   --navy: #12183A;
   --cream: #F5F0E8;
+}
+
+/* Day theme: set on <html data-theme="day"> by an inline script in layout.tsx,
+   based on the visitor's local hour (6am-6pm). Same accent, light bg, dark text. */
+:root[data-theme='day'] {
+  --dark: #FFFFFF;
+  --muted: #6B6B6B;
+  --heading: #0A0A0A;
 }
 
 * {
@@ -46,6 +55,11 @@ body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme='day'] .glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .glow-green { box-shadow: 0 0 40px rgb(var(--accent-rgb) / 0.2); }
@@ -93,6 +107,11 @@ body {
 .input-field:focus {
   border-color: rgb(var(--accent-rgb) / 0.5);
   box-shadow: 0 0 0 3px rgb(var(--accent-rgb) / 0.08);
+}
+
+:root[data-theme='day'] .input-field {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .divider {

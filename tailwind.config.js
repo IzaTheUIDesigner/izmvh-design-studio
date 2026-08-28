@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -12,12 +14,14 @@ module.exports = {
         'surface': '#FFFFFF',
         'surface-2': '#F5F0E8',
         'border': '#E5E0D8',
-        dark: '#040404',
+        // Theme-aware tokens: values come from CSS variables in globals.css,
+        // which flip under [data-theme="day"]. Same class names work in both themes.
+        dark: 'var(--dark)',
         accent: {
-          DEFAULT: '#FF4D1C',
+          DEFAULT: 'var(--accent)',
         },
-        heading: '#F9F9F9',
-        muted: '#8E8E8E',
+        heading: 'var(--heading)',
+        muted: 'var(--muted)',
         green: {
           DEFAULT: '#0F5C4A',
           dark: '#0D3D2E',
@@ -58,5 +62,11 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    // `day:` variant applies whenever an ancestor has data-theme="day" (set on <html>
+    // based on the visitor's local time). Default/unprefixed classes remain the night theme.
+    plugin(function ({ addVariant }) {
+      addVariant('day', '[data-theme="day"] &')
+    }),
+  ],
 }

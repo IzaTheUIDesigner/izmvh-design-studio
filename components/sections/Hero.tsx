@@ -10,7 +10,7 @@ const fadeUp = {
   animate: { opacity: 1, y: 0 },
 }
 
-const panel = 'border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02]'
+const panel = 'border border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02]'
 
 function useLiveTime(timeZone: string) {
   const [time, setTime] = useState('')
@@ -127,7 +127,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className={`flex-1 p-7 flex flex-col justify-end ${panel}`}
               >
-                <span className="text-white/50 text-[10px] uppercase tracking-[0.25em] mb-3">
+                <span className="text-white/50 day:text-black/50 text-[10px] uppercase tracking-[0.25em] mb-3">
                   Web Design Studio
                 </span>
                 <h1 className="text-heading text-3xl md:text-4xl lg:text-[42px] font-bold leading-[1.05] tracking-tight mb-4 max-w-xl">

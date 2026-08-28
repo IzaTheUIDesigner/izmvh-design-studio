@@ -80,7 +80,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-xl p-5 hover:border-accent/30 transition-colors"
+                className="border border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-xl p-5 hover:border-accent/30 transition-colors"
               >
                 <div className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-4">
                   {item.icon}
@@ -133,7 +133,7 @@ export default function HomePage() {
         />
         <div className="grid md:grid-cols-4 gap-0 relative">
           {/* Connecting line: static track + scroll-drawn accent fill */}
-          <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-white/10" />
+          <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-white/10 day:bg-black/10" />
           <motion.div
             className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-accent origin-left"
             style={{ scaleX: processLineScale }}

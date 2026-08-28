@@ -111,20 +111,20 @@ export default function QuotePageClient() {
                       ? 'bg-accent text-black glow-green-sm'
                       : step > s.id
                       ? 'bg-accent/10 text-accent'
-                      : 'border border-white/10 text-muted'
+                      : 'border border-white/10 day:border-black/10 text-muted'
                   }`}
                 >
                   {s.icon}
                   <span className="hidden sm:block">{s.label}</span>
                 </div>
                 {i < steps.length - 1 && (
-                  <div className={`w-4 h-px ${step > s.id ? 'bg-accent' : 'bg-white/10'}`} />
+                  <div className={`w-4 h-px ${step > s.id ? 'bg-accent' : 'bg-white/10 day:bg-black/10'}`} />
                 )}
               </div>
             ))}
           </div>
           {/* Progress line */}
-          <div className="h-0.5 bg-white/10 rounded-full overflow-hidden">
+          <div className="h-0.5 bg-white/10 day:bg-black/10 rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-accent rounded-full"
               animate={{ width: `${((step - 1) / 5) * 100}%` }}
@@ -135,7 +135,7 @@ export default function QuotePageClient() {
       )}
 
       {/* Form Card */}
-      <div className="border border-white/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8">
+      <div className="border border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8">
         {submitted ? (
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -205,10 +205,10 @@ export default function QuotePageClient() {
                       className={`w-full flex items-center gap-4 p-4 rounded-xl border text-left transition-all ${
                         form.projectType === pt.id
                           ? 'border-accent bg-accent/10 glow-green-sm'
-                          : 'border-white/10 bg-white/[0.02] hover:border-white/20'
+                          : 'border-white/10 day:border-black/10 bg-white/[0.02] day:bg-black/[0.02] hover:border-white/20 day:hover:border-black/20'
                       }`}
                     >
-                      <div className={`w-4 h-4 rounded-full border-2 flex-shrink-0 ${form.projectType === pt.id ? 'border-accent bg-accent' : 'border-white/20'}`} />
+                      <div className={`w-4 h-4 rounded-full border-2 flex-shrink-0 ${form.projectType === pt.id ? 'border-accent bg-accent' : 'border-white/20 day:border-black/20'}`} />
                       <div>
                         <p className="text-heading font-medium text-sm">{pt.label}</p>
                         <p className="text-muted text-xs">{pt.desc}</p>
@@ -247,7 +247,7 @@ export default function QuotePageClient() {
                           className={`px-3 py-2 rounded-lg text-xs text-left transition-all border ${
                             form.selectedFeatures.includes(f)
                               ? 'border-accent bg-accent/10 text-accent'
-                              : 'border-white/10 text-muted hover:border-white/20 hover:text-heading'
+                              : 'border-white/10 day:border-black/10 text-muted hover:border-white/20 day:hover:border-black/20 hover:text-heading'
                           }`}
                         >
                           {f}
@@ -265,7 +265,7 @@ export default function QuotePageClient() {
                           className={`flex-1 py-2.5 px-3 rounded-lg text-xs text-center border transition-all ${
                             form.hasBranding === opt
                               ? 'border-accent bg-accent/10 text-accent'
-                              : 'border-white/10 text-muted hover:border-white/20'
+                              : 'border-white/10 day:border-black/10 text-muted hover:border-white/20 day:hover:border-black/20'
                           }`}
                         >
                           {opt}
@@ -290,7 +290,7 @@ export default function QuotePageClient() {
                       className={`p-4 rounded-xl border text-left transition-all ${
                         form.budget === b.id
                           ? 'border-accent bg-accent/10 glow-green-sm'
-                          : 'border-white/10 bg-white/[0.02] hover:border-white/20'
+                          : 'border-white/10 day:border-black/10 bg-white/[0.02] day:bg-black/[0.02] hover:border-white/20 day:hover:border-black/20'
                       }`}
                     >
                       <p className="text-heading font-grotesk font-semibold text-sm mb-0.5">{b.label}</p>
@@ -314,7 +314,7 @@ export default function QuotePageClient() {
                       className={`p-4 rounded-xl border text-left transition-all ${
                         form.timeline === t.id
                           ? 'border-accent bg-accent/10 glow-green-sm'
-                          : 'border-white/10 bg-white/[0.02] hover:border-white/20'
+                          : 'border-white/10 day:border-black/10 bg-white/[0.02] day:bg-black/[0.02] hover:border-white/20 day:hover:border-black/20'
                       }`}
                     >
                       <p className="text-heading font-grotesk font-semibold text-sm mb-0.5">{t.label}</p>
@@ -343,7 +343,7 @@ export default function QuotePageClient() {
                     { label: 'Budget', value: budgetRanges.find(b => b.id === form.budget)?.label || '—' },
                     { label: 'Timeline', value: timelines.find(t => t.id === form.timeline)?.label || '—' },
                   ].map((row) => (
-                    <div key={row.label} className="flex items-start gap-4 py-3 border-b border-white/10 last:border-0">
+                    <div key={row.label} className="flex items-start gap-4 py-3 border-b border-white/10 day:border-black/10 last:border-0">
                       <span className="text-xs font-grotesk font-semibold text-muted uppercase tracking-wider w-28 flex-shrink-0 pt-0.5">{row.label}</span>
                       <span className="text-sm text-heading">{row.value}</span>
                     </div>
@@ -356,7 +356,7 @@ export default function QuotePageClient() {
 
         {/* Navigation Buttons */}
         {!submitted && (
-          <div className="flex justify-between items-center mt-8 pt-6 border-t border-white/10">
+          <div className="flex justify-between items-center mt-8 pt-6 border-t border-white/10 day:border-black/10">
             <Button
               variant="secondary"
               onClick={back}

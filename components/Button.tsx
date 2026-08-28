@@ -29,7 +29,7 @@ export default function Button({
 
   const variants = {
     primary: 'bg-accent hover:bg-accent/90 text-black glow-green-sm hover:glow-green',
-    secondary: 'bg-transparent border border-white/15 hover:border-accent/50 text-heading hover:bg-white/5',
+    secondary: 'bg-transparent border border-white/15 day:border-black/15 hover:border-accent/50 text-heading hover:bg-white/5 day:hover:bg-black/5',
     ghost: 'text-muted hover:text-heading bg-transparent',
   }
 
