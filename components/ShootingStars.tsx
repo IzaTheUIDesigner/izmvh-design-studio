@@ -14,9 +14,9 @@ interface Star {
   duration: number
 }
 
-const MIN_DELAY = 8000
-const MAX_DELAY = 15000
-const MAX_CONCURRENT = 2
+const MIN_DELAY = 3000
+const MAX_DELAY = 6000
+const MAX_CONCURRENT = 4
 
 function createStar(id: number): Star {
   // Upper-to-mid sky, travelling down-and-across at a shallow diagonal — classic
@@ -42,7 +42,7 @@ function createStar(id: number): Star {
 
 /**
  * Occasional shooting stars for the night theme, mounted at the root layout (fixed,
- * z-0, pointer-events-none, behind all content). Fires roughly every 8-15s with
+ * z-0, pointer-events-none, behind all content). Fires roughly every 3-6s with
  * randomized position/angle/timing, capped at MAX_CONCURRENT so it never feels busy.
  * Skips entirely under prefers-reduced-motion and outside the night theme, rather than
  * scheduling work that just stays invisible.
