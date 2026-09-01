@@ -11,7 +11,6 @@ module.exports = {
     extend: {
       colors: {
         black: '#0A0A0A',
-        'surface': '#FFFFFF',
         'surface-2': '#F5F0E8',
         'border': '#E5E0D8',
         // Theme-aware tokens: values come from CSS variables in globals.css,
@@ -22,6 +21,9 @@ module.exports = {
         },
         heading: 'var(--heading)',
         muted: 'var(--muted)',
+        // Card/surface background, distinct from the page bg (--dark) — the
+        // Craftivo-style "boxed element" tone (their --surface-color).
+        surface: 'var(--surface)',
         green: {
           DEFAULT: '#0F5C4A',
           dark: '#0D3D2E',

@@ -3,11 +3,10 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
-import {
-  Globe, ShoppingBag, Wrench, Palette, CheckCircle,
-  Zap, Shield, TrendingUp
-} from 'lucide-react'
+import { Globe, ShoppingBag, Wrench, Palette } from 'lucide-react'
 import Hero from '@/components/sections/Hero'
+import About from '@/components/sections/About'
+import Journey from '@/components/sections/Journey'
 import Projects from '@/components/sections/Projects'
 import ServiceCard from '@/components/ServiceCard'
 import SectionHeading from '@/components/SectionHeading'
@@ -18,25 +17,21 @@ const services = [
     icon: <Globe size={22} />,
     title: 'Website Design & Development',
     description: 'High-performance, visually stunning websites built to convert visitors into customers.',
-    features: ['Custom responsive design', 'SEO-optimised architecture', 'Performance-first build', 'CMS integration'],
   },
   {
     icon: <ShoppingBag size={22} />,
     title: 'E-commerce Development',
     description: 'Full-featured online stores with seamless checkout flows and payment integration.',
-    features: ['Shopify & custom builds', 'Payment gateway setup', 'Inventory management', 'Mobile-optimised UX'],
   },
   {
     icon: <Palette size={22} />,
     title: 'UI/UX Design',
     description: 'Thoughtful interfaces that put your users first — elegant, intuitive, and conversion-focused.',
-    features: ['User research & mapping', 'Wireframes & prototypes', 'Design system creation', 'Accessibility compliance'],
   },
   {
     icon: <Wrench size={22} />,
     title: 'Maintenance & Support',
     description: 'Ongoing care to keep your website fast, secure, and up-to-date — always.',
-    features: ['Monthly updates & patches', 'Performance monitoring', '24h response SLA', 'Content updates'],
   },
 ]
 
@@ -59,39 +54,11 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* ── WHY IZMVH ────────────────────────────────────────── */}
-      <section className="py-28 max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <SectionHeading
-            label="Why IZMVH"
-            title={"Built to perform.\nNot just look good."}
-            subtitle="We combine sharp design thinking with technical precision to build digital products that create real business outcomes."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {[
-              { icon: <Zap size={18} />, title: 'Performance-first', desc: 'Every site is optimised for Core Web Vitals from day one.' },
-              { icon: <Shield size={18} />, title: 'Security by default', desc: 'SSL, hardened configs, and best-practice auth on every build.' },
-              { icon: <TrendingUp size={18} />, title: 'Growth-oriented', desc: 'SEO and analytics built in — not bolted on after launch.' },
-              { icon: <CheckCircle size={18} />, title: 'Ongoing partnership', desc: 'We stay with you after launch. Your success is our success.' },
-            ].map((item, i) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="border border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-xl p-5 hover:border-accent/30 transition-colors"
-              >
-                <div className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-4">
-                  {item.icon}
-                </div>
-                <h3 className="font-grotesk font-semibold text-heading text-sm mb-1.5">{item.title}</h3>
-                <p className="text-muted text-xs leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <About />
+
+      <div className="divider" />
+
+      <Journey />
 
       <div className="divider" />
 

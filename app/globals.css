@@ -9,6 +9,7 @@
   --accent-rgb: 255 77 28;
   --muted: #8E8E8E;
   --heading: #F9F9F9;
+  --surface: #1A1A1A;
   --green: #0F5C4A;
   --navy: #12183A;
   --cream: #F5F0E8;
@@ -20,6 +21,7 @@
   --dark: #FFFFFF;
   --muted: #6B6B6B;
   --heading: #0A0A0A;
+  --surface: #F5F5F5;
 }
 
 * {
