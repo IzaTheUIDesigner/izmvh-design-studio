@@ -14,10 +14,11 @@ const contactInfo = [
 ]
 
 const projectTypes = [
-  'Website Design & Development',
-  'E-commerce Development',
-  'UI/UX Design',
-  'Website Maintenance',
+  'Digital Audit',
+  'Website Development',
+  'Launch & Deployment',
+  'Monthly Digital Care',
+  'Search & Growth',
   'Brand Identity',
   'Other',
 ]
@@ -65,8 +66,8 @@ export default function ContactPageClient() {
       <section className="pt-36 pb-16 max-w-7xl mx-auto px-6">
         <SectionHeading
           label="Contact"
-          title={"Let's build something\ntogether."}
-          subtitle="Have a project in mind? We'd love to hear about it. Fill in the form and we'll get back to you within 48 hours."
+          title={"Let's talk about your\ndigital presence."}
+          subtitle="Whether it's a new website, a struggling one, or something you're not sure about yet — tell me what's going on and I'll get back to you within 48 hours."
           className="max-w-2xl"
         />
       </section>
@@ -102,12 +103,12 @@ export default function ContactPageClient() {
             </div>
 
             <div className="border border-accent/20 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8 glow-green-sm">
-              <h3 className="font-grotesk font-semibold text-heading text-base mb-3">Prefer a structured brief?</h3>
+              <h3 className="font-grotesk font-semibold text-heading text-base mb-3">Not sure where to start?</h3>
               <p className="text-muted text-sm leading-relaxed mb-5">
-                Use our detailed quote form to walk through your project requirements step by step.
+                Use the detailed form to walk through your business and requirements step by step — it starts with a Digital Audit.
               </p>
               <Button href="/quote" arrow>
-                Get a Detailed Quote
+                Start with a Digital Audit
               </Button>
             </div>
           </div>
@@ -126,7 +127,7 @@ export default function ContactPageClient() {
                   </div>
                   <h3 className="font-grotesk font-bold text-heading text-2xl mb-3">Message sent!</h3>
                   <p className="text-muted leading-relaxed max-w-sm">
-                    Thanks for reaching out. We&apos;ll review your message and get back to you within 48 hours.
+                    Thanks for reaching out. I&apos;ll review your message and get back to you within 48 hours.
                   </p>
                 </motion.div>
               ) : (
@@ -210,7 +211,7 @@ export default function ContactPageClient() {
                     <textarea
                       required
                       rows={5}
-                      placeholder="Tell us about your project, goals, or any questions you have..."
+                      placeholder="Tell me about your business, goals, or any questions you have..."
                       className="input-field resize-none"
                       value={form.message}
                       onChange={(e) => update('message', e.target.value)}

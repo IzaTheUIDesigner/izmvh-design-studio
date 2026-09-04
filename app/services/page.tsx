@@ -3,7 +3,7 @@ import ServicesPageClient from './ServicesClient'
 
 export const metadata: Metadata = {
   title: 'Services',
-  description: 'Web design, e-commerce development, UI/UX design, and ongoing website maintenance — everything your business needs online.',
+  description: 'Digital audits, website development, launch, monthly digital care, and search & growth — a full digital lifecycle, not a one-off build.',
 }
 
 export default function ServicesPage() {

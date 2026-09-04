@@ -18,19 +18,19 @@ const THEME_SCRIPT = `
 
 export const metadata: Metadata = {
   title: {
-    default: 'IZMVH Design Studio | Premium Web Design & Development',
+    default: 'IZMVH Design Studio | Digital Audits, Websites & Digital Growth',
     template: '%s | IZMVH Design Studio',
   },
-  description: 'IZMVH Design Studio builds exceptional digital experiences — websites, e-commerce solutions, and ongoing support that help businesses grow online.',
-  keywords: ['web design South Africa', 'web development', 'e-commerce development', 'UI/UX design'],
-  authors: [{ name: 'IZMVH Design Studio' }],
-  creator: 'IZMVH Design Studio',
+  description: 'I help businesses build, manage, improve and grow their digital presence — digital audits, website development, launch, monthly digital care, and search & growth.',
+  keywords: ['digital audit South Africa', 'web design South Africa', 'web development', 'website maintenance', 'SEO South Africa'],
+  authors: [{ name: 'Iza Vuyo Mehlomane' }],
+  creator: 'Iza Vuyo Mehlomane',
   openGraph: {
     type: 'website',
     locale: 'en_ZA',
     url: 'https://izmvh.co.za',
     title: 'IZMVH Design Studio',
-    description: 'Designing digital experiences that grow businesses.',
+    description: 'I help businesses build, manage, improve and grow their digital presence.',
     siteName: 'IZMVH Design Studio',
   },
   robots: { index: true, follow: true },

@@ -15,10 +15,11 @@ const steps = [
 ]
 
 const projectTypes = [
-  { id: 'website', label: 'Website Design & Development', desc: 'A new or redesigned website for your business.' },
+  { id: 'audit', label: 'Digital Audit', desc: "Not sure what you need yet — start with a look at what you already have." },
+  { id: 'website', label: 'Website Development', desc: 'A new or redesigned website for your business.' },
+  { id: 'care', label: 'Monthly Digital Care', desc: 'Ongoing updates, maintenance and security for an existing website.' },
+  { id: 'growth', label: 'Search & Growth', desc: 'SEO, analytics and conversion improvements for an existing website.' },
   { id: 'ecommerce', label: 'E-commerce Store', desc: 'An online store to sell your products or services.' },
-  { id: 'uiux', label: 'UI/UX Design', desc: 'Wireframes, prototypes, and design systems.' },
-  { id: 'maintenance', label: 'Maintenance & Support', desc: 'Ongoing care for an existing website.' },
   { id: 'brand', label: 'Brand Identity', desc: 'Logo, colour palette, and brand guidelines.' },
 ]
 
@@ -34,7 +35,7 @@ const budgetRanges = [
   { id: 'b3', label: 'R 15k – R 30k', sub: 'Professional website' },
   { id: 'b4', label: 'R 30k – R 60k', sub: 'Advanced build' },
   { id: 'b5', label: 'R 60k+', sub: 'Enterprise / complex' },
-  { id: 'b6', label: 'Not sure yet', sub: 'We can advise' },
+  { id: 'b6', label: 'Not sure yet', sub: 'I can advise' },
 ]
 
 const timelines = [
@@ -90,12 +91,12 @@ export default function QuotePageClient() {
       {/* Header */}
       <div className="mb-10">
         <span className="inline-block font-grotesk text-xs font-semibold uppercase tracking-[0.15em] text-accent mb-4 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full">
-          Get a Quote
+          Start with a Digital Audit
         </span>
         <h1 className="text-4xl font-bold text-heading leading-tight mb-3">
-          Tell us about your project.
+          Tell me about your business.
         </h1>
-        <p className="text-muted">We&apos;ll put together a tailored proposal within 48 hours — no obligation.</p>
+        <p className="text-muted">I&apos;ll take a look at what you have and come back with clear next steps within 48 hours — no obligation.</p>
       </div>
 
       {/* Progress Bar */}
@@ -145,13 +146,13 @@ export default function QuotePageClient() {
             <div className="w-20 h-20 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center mb-6 glow-green">
               <CheckCircle size={40} className="text-accent" />
             </div>
-            <h2 className="font-grotesk font-bold text-heading text-3xl mb-3">Quote received!</h2>
+            <h2 className="font-grotesk font-bold text-heading text-3xl mb-3">Brief received!</h2>
             <p className="text-muted leading-relaxed max-w-sm mb-8">
-              Thanks, {form.contactName || 'there'}! We&apos;ve received your brief and will put together a tailored proposal within <strong className="text-heading">48 hours</strong>.
+              Thanks, {form.contactName || 'there'}! I&apos;ve received your brief and will get back to you with clear next steps within <strong className="text-heading">48 hours</strong>.
             </p>
             <div className="flex gap-3">
               <Button href="/" variant="secondary">Back to Home</Button>
-              <Button href="/portfolio" arrow>View Our Work</Button>
+              <Button href="/portfolio" arrow>View My Work</Button>
             </div>
           </motion.div>
         ) : (
@@ -281,7 +282,7 @@ export default function QuotePageClient() {
             {step === 4 && (
               <motion.div key="step4" variants={slideVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
                 <h2 className="font-grotesk font-bold text-heading text-xl mb-2">What&apos;s your budget?</h2>
-                <p className="text-muted text-sm mb-6">This helps us tailor our recommendation to what works for you.</p>
+                <p className="text-muted text-sm mb-6">This helps me tailor my recommendation to what works for you.</p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {budgetRanges.map((b) => (
                     <button
@@ -323,7 +324,7 @@ export default function QuotePageClient() {
                   ))}
                 </div>
                 <div>
-                  <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">Anything else we should know?</label>
+                  <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">Anything else I should know?</label>
                   <textarea rows={4} placeholder="Additional context, references, goals, or questions..." className="input-field resize-none" value={form.notes} onChange={(e) => update('notes', e.target.value)} />
                 </div>
               </motion.div>
@@ -394,7 +395,7 @@ export default function QuotePageClient() {
       {/* Trust note */}
       {!submitted && (
         <p className="text-center text-muted text-xs mt-6">
-          Your information is kept private and never shared. We respond within 48 hours.
+          Your information is kept private and never shared. I respond within 48 hours.
         </p>
       )}
     </section>

@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import { Mail, MapPin, Phone, ArrowUpRight } from 'lucide-react'
 
-const services = ['Website Design', 'E-commerce Development', 'UI/UX Design', 'Website Maintenance']
+const services = ['Digital Audit', 'Website Development', 'Launch & Deployment', 'Monthly Digital Care', 'Search & Growth']
 const pages = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/contact', label: 'Contact' },
-  { href: '/quote', label: 'Get a Quote' },
+  { href: '/quote', label: 'Start a Digital Audit' },
 ]
 
 export default function Footer() {
@@ -24,7 +24,7 @@ export default function Footer() {
               <span className="font-grotesk font-bold text-heading text-lg">IZMVH</span>
             </div>
             <p className="text-muted text-sm leading-[1.7] mb-6">
-              Building exceptional digital experiences for businesses that want to grow online.
+              I help businesses build, manage, improve and grow their digital presence — not just their website.
             </p>
             <div className="flex flex-col gap-3">
               <a href="mailto:iza.vuyo@izmvh.co.za" className="flex items-center gap-2 text-muted hover:text-heading transition-colors text-sm">
@@ -67,13 +67,13 @@ export default function Footer() {
           <div className="rounded-2xl p-6 bg-accent/[0.15] border border-accent/30">
             <h4 className="font-grotesk font-semibold text-heading mb-3">Ready to start?</h4>
             <p className="text-sm mb-5 leading-relaxed text-muted">
-              Let&apos;s build something remarkable together.
+              Start with a Digital Audit — no obligation.
             </p>
             <Link
               href="/quote"
               className="flex items-center gap-2 bg-accent text-black text-sm font-medium rounded-lg transition-all duration-200 w-fit px-5 py-3"
             >
-              Get a Quote <ArrowUpRight size={14} />
+              Start a Digital Audit <ArrowUpRight size={14} />
             </Link>
           </div>
         </div>

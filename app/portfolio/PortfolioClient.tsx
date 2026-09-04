@@ -159,7 +159,7 @@ export default function PortfolioPageClient() {
             Let&apos;s build something you&apos;re proud to show off.
           </p>
           <Button href="/quote" size="lg" arrow>
-            Start a Project
+            Start with a Digital Audit
           </Button>
         </div>
       </section>

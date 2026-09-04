@@ -50,15 +50,27 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <p className="text-muted leading-relaxed mb-4">
-              Iza Vuyo Mehlomane is a self-taught designer and developer based in Gqeberha, South Africa.
-              Starting out in 2023 as an editorial designer, Iza built an early client base through Nelson
-              Mandela University while still a student, before expanding into UI/UX design and web development.
+              I don&apos;t just build websites. I help businesses build, manage, improve and grow their
+              digital presence — because a website is only one part of that. I look at whether a business
+              actually needs one, what it needs to achieve, how people will find it, and how it performs
+              once it&apos;s live.
+            </p>
+            <p className="text-muted leading-relaxed mb-4">
+              I&apos;m a self-taught designer and developer based in Gqeberha, South Africa. Starting out in
+              2023 as an editorial designer, I built an early client base through Nelson Mandela University
+              while still a student, before expanding into UI/UX design, web development and, more recently,
+              the wider work of keeping a site healthy and growing after it launches.
+            </p>
+            <p className="text-muted leading-relaxed mb-4">
+              That range now runs from brand identity and editorial work through to full websites and product
+              design — including designing the website and brand identity for AD Group of Companies. Today I
+              work independently under IZMVH Design Studio, taking on client and freelance design work
+              alongside independent product development.
             </p>
             <p className="text-muted leading-relaxed">
-              That range now runs from brand identity and editorial work through to full websites and product
-              design — including designing the website and brand identity for AD Group of Companies. Today Iza
-              works independently under IZMVH Design Studio, taking on client and freelance design work
-              alongside independent product development.
+              Working solo is deliberate, not a limitation. I take on a small number of clients at a time, so
+              there&apos;s no account-manager layer between you and the work — you deal with me directly, from
+              the first audit through to ongoing care, and I&apos;m personally accountable for the outcome.
             </p>
           </motion.div>
 

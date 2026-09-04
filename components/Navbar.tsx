@@ -62,9 +62,9 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/quote"
-              className="px-5 py-2.5 bg-accent hover:bg-accent/90 text-black text-sm font-medium rounded-lg transition-all duration-200 glow-green-sm hover:glow-green"
+              className="px-5 py-2.5 bg-accent hover:bg-accent/90 text-black text-sm font-medium rounded-lg transition-all duration-200 glow-green-sm hover:glow-green whitespace-nowrap"
             >
-              Get a Quote
+              Start a Digital Audit
             </Link>
           </div>
 
@@ -105,7 +105,7 @@ export default function Navbar() {
               ))}
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.36 }}>
                 <Link href="/quote" className="inline-block mt-4 px-8 py-4 bg-accent text-black font-semibold rounded-xl text-lg glow-green">
-                  Get a Quote →
+                  Start a Digital Audit →
                 </Link>
               </motion.div>
             </div>

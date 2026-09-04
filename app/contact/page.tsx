@@ -3,7 +3,7 @@ import ContactPageClient from './ContactClient'
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: "Get in touch with IZMVH Design Studio. We'd love to hear about your project.",
+  description: "Get in touch with Iza at IZMVH Design Studio — I'd love to hear about your business and what you're trying to achieve.",
 }
 
 export default function ContactPage() {
