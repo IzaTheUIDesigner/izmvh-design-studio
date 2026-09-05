@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import SectionHeading from '@/components/SectionHeading'
 
-const categories = ['All', 'Web Design', 'E-commerce', 'UI/UX', 'EdTech']
+const categories = ['All', 'Web Design', 'E-commerce', 'UI/UX', 'EdTech', 'Template Customization']
 
 const projects = [
   {
@@ -39,12 +39,12 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Thynk Unlimited',
-    category: 'Web Design',
+    title: 'Loom & Line',
+    category: 'Template Customization',
     duration: 'Concept',
-    description: 'A concept website exploring brand identity and user experience.',
-    tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-    image: '/images/thynkunlimited.png',
+    description: 'A licensed Envato template rebuilt end-to-end for a fictional interior design studio — full rebrand, rewritten copy, 200+ placeholder images replaced with real photography, and a new palette and type system.',
+    tags: ['HTML5', 'Bootstrap 4', 'jQuery', 'Rebrand'],
+    image: '/images/loomandline.png',
   },
   {
     id: 4,

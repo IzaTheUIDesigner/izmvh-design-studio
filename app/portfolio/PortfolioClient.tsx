@@ -6,9 +6,19 @@ import { ArrowUpRight } from 'lucide-react'
 import SectionHeading from '@/components/SectionHeading'
 import Button from '@/components/Button'
 
-const categories = ['All', 'Web Design', 'E-commerce', 'UI/UX', 'EdTech']
+const categories = ['All', 'Web Design', 'E-commerce', 'UI/UX', 'EdTech', 'Template Customization']
 
-const projects = [
+const projects: {
+  id: number
+  title: string
+  category: string
+  description: string
+  tags: string[]
+  gradient: string
+  image: string
+  duration: string
+  link?: string
+}[] = [
   {
     id: 0,
     title: 'CampusOrbit',
@@ -41,13 +51,14 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Thynk Unlimited',
-    category: 'Web Design',
-    description: 'A concept website exploring brand identity and user experience.',
-    tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-    gradient: 'bg-gradient-to-br from-blue-900/40 via-slate-800 to-slate-900',
-    image: '/images/thynkunlimited.png',
+    title: 'Loom & Line',
+    category: 'Template Customization',
+    description: 'A licensed Envato template rebuilt end-to-end for a fictional interior design studio — full rebrand, rewritten copy, 200+ placeholder images replaced with real photography, and a new palette and type system.',
+    tags: ['HTML5', 'Bootstrap 4', 'jQuery', 'Rebrand'],
+    gradient: 'bg-gradient-to-br from-orange-950/40 via-slate-800 to-slate-900',
+    image: '/images/loomandline.png',
     duration: 'Concept',
+    link: 'https://loom-and-line-kappa.vercel.app',
   },
   {
     id: 4,
@@ -140,9 +151,20 @@ export default function PortfolioPageClient() {
                       </span>
                     ))}
                   </div>
-                  <button className="inline-flex items-center gap-1.5 text-sm text-muted font-medium group-hover:text-accent group-hover:gap-2.5 transition-all">
-                    View Case Study <ArrowUpRight size={14} />
-                  </button>
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm text-muted font-medium group-hover:text-accent group-hover:gap-2.5 transition-all"
+                    >
+                      Visit Live Site <ArrowUpRight size={14} />
+                    </a>
+                  ) : (
+                    <button className="inline-flex items-center gap-1.5 text-sm text-muted font-medium group-hover:text-accent group-hover:gap-2.5 transition-all">
+                      View Case Study <ArrowUpRight size={14} />
+                    </button>
+                  )}
                 </div>
               </motion.div>
             ))}
