@@ -53,7 +53,7 @@ const projects: {
     id: 3,
     title: 'Loom & Line',
     category: 'Template Customization',
-    description: 'A licensed Envato template rebuilt end-to-end for a fictional interior design studio — full rebrand, rewritten copy, 200+ placeholder images replaced with real photography, and a new palette and type system.',
+    description: 'An interior design and architecture studio brand, built around a warm terracotta palette and clean modern layouts that showcase services, process, and finished spaces.',
     tags: ['HTML5', 'Bootstrap 4', 'jQuery', 'Rebrand'],
     gradient: 'bg-gradient-to-br from-orange-950/40 via-slate-800 to-slate-900',
     image: '/images/loomandline.png',
