@@ -70,7 +70,7 @@ export default function Footer() {
         <div className="divider mb-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted opacity-70">© 2026 IZMVH Design Studio. All rights reserved.</p>
+          <p className="text-sm text-muted opacity-70">© {new Date().getFullYear()} IZMVH Design Studio. All rights reserved.</p>
           <p className="text-sm text-muted opacity-70">Crafted with precision in Gqeberha, South Africa.</p>
         </div>
       </div>
