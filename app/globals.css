@@ -10,9 +10,6 @@
   --muted: #8E8E8E;
   --heading: #F9F9F9;
   --surface: #1A1A1A;
-  --green: #0F5C4A;
-  --navy: #12183A;
-  --cream: #F5F0E8;
 }
 
 /* Day theme: set on <html data-theme="day"> by an inline script in layout.tsx,
@@ -30,9 +27,8 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* Lenis (mounted in SmoothScroll) owns scroll smoothing — native CSS
+   smooth-scroll would fight it, so it's intentionally left unset here. */
 
 body {
   background-color: var(--dark);
@@ -52,55 +48,45 @@ body {
 ::webkit-scrollbar-track { background: var(--dark); }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
 
-.glass-nav {
-  background: rgba(4, 4, 4, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+/* Fixed header background, only once the page has scrolled past the hero —
+   flat and thin, no blur/glow, just enough to keep nav text legible. */
+.nav-scrolled {
+  background: var(--dark);
+  border-bottom: 1px solid rgb(255 255 255 / 0.06);
+}
+:root[data-theme='day'] .nav-scrolled {
+  border-bottom: 1px solid rgb(0 0 0 / 0.06);
 }
 
-:root[data-theme='day'] .glass-nav {
-  background: rgba(255, 255, 255, 0.85);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+/* Flat hover treatment shared by bordered elements (service rows, cards) —
+   a thin colour shift on the border, nothing else. */
+.line-hover {
+  transition: border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1), color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-.glow-green { box-shadow: 0 0 40px rgb(var(--accent-rgb) / 0.2); }
-.glow-green-sm { box-shadow: 0 0 16px rgb(var(--accent-rgb) / 0.12); }
-
-.text-gradient {
-  background: linear-gradient(135deg, #12183A 0%, #0F5C4A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-gradient-green {
-  background: linear-gradient(135deg, var(--accent) 0%, #FF8552 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.card-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.card-hover:hover {
-  transform: translateY(-4px);
+.line-hover:hover {
   border-color: rgb(var(--accent-rgb) / 0.4);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 30px rgb(var(--accent-rgb) / 0.1);
+}
+
+/* Shared hover-scale for images inside an overflow-hidden frame (see
+   ImageFrame). Kept as plain CSS rather than long Tailwind arbitrary values. */
+.img-hover-scale {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(1);
+}
+.group:hover .img-hover-scale {
+  transform: scale(1.045);
 }
 
 .input-field {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--heading);
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 14px 16px;
   width: 100%;
   font-family: 'DM Sans', system-ui, sans-serif;
   font-size: 15px;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease;
   outline: none;
 }
 
@@ -108,7 +94,6 @@ body {
 
 .input-field:focus {
   border-color: rgb(var(--accent-rgb) / 0.5);
-  box-shadow: 0 0 0 3px rgb(var(--accent-rgb) / 0.08);
 }
 
 :root[data-theme='day'] .input-field {
@@ -118,10 +103,11 @@ body {
 
 .divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(18,24,58,0.1), transparent);
+  background: rgb(255 255 255 / 0.08);
 }
-
-.noise::before { display: none; }
+:root[data-theme='day'] .divider {
+  background: rgb(0 0 0 / 0.08);
+}
 
 @media (prefers-reduced-motion: reduce) {
   * {

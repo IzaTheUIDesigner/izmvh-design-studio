@@ -3,8 +3,8 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import SunLayer from '@/components/SunLayer'
-import ShootingStars from '@/components/ShootingStars'
+import SmoothScroll from '@/components/motion/SmoothScroll'
+import PageTransition from '@/components/motion/PageTransition'
 
 const THEME_SCRIPT = `
 (function () {
@@ -45,14 +45,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* eslint-disable-next-line @next/next/no-page-custom-font -- rule targets pages/_document.js; this is the App Router root layout, which is the supported place for global font links */}
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <SunLayer />
-        <ShootingStars />
+        <SmoothScroll />
         <div className="relative z-10">
           <Navbar />
-          <main>{children}</main>
+          <main>
+            <PageTransition>{children}</PageTransition>
+          </main>
           <Footer />
           <WhatsAppButton />
         </div>
