@@ -25,11 +25,11 @@ export default function Button({
   type = 'button',
   disabled = false,
 }: ButtonProps) {
-  const base = 'inline-flex items-center gap-2 font-medium rounded-lg transition-all duration-200 font-sans'
+  const base = 'inline-flex items-center gap-2 font-medium rounded-full transition-colors duration-300 font-sans'
 
   const variants = {
-    primary: 'bg-accent hover:bg-accent/90 text-black glow-green-sm hover:glow-green',
-    secondary: 'bg-transparent border border-white/15 day:border-black/15 hover:border-accent/50 text-heading hover:bg-white/5 day:hover:bg-black/5',
+    primary: 'bg-accent hover:bg-accent/90 text-black',
+    secondary: 'bg-transparent border border-white/15 day:border-black/15 hover:border-accent/50 text-heading',
     ghost: 'text-muted hover:text-heading bg-transparent',
   }
 

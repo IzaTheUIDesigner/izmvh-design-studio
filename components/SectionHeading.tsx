@@ -1,7 +1,5 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import clsx from 'clsx'
+import Reveal from '@/components/motion/Reveal'
 
 interface SectionHeadingProps {
   label?: string
@@ -19,26 +17,20 @@ export default function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={clsx(centered && 'text-center', className)}
-    >
+    <Reveal className={clsx(centered && 'text-center mx-auto', className)}>
       {label && (
-        <span className="inline-block font-grotesk text-xs font-semibold uppercase tracking-[0.15em] text-accent mb-4 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full">
+        <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
           {label}
         </span>
       )}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-heading leading-tight tracking-tight mb-4">
+      <h2 className="text-3xl md:text-4xl lg:text-[3.25rem] font-semibold text-heading leading-[1.1] tracking-tight mb-4 whitespace-pre-line">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-muted text-lg leading-relaxed max-w-2xl mx-auto">
+        <p className={clsx('text-muted text-lg leading-relaxed max-w-2xl', centered && 'mx-auto')}>
           {subtitle}
         </p>
       )}
-    </motion.div>
+    </Reveal>
   )
 }
