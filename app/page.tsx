@@ -3,38 +3,32 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
-import { SearchCheck, Globe, Rocket, ShieldCheck, TrendingUp } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import Hero from '@/components/sections/Hero'
 import About from '@/components/sections/About'
-import Journey from '@/components/sections/Journey'
-import Projects from '@/components/sections/Projects'
-import ServiceCard from '@/components/ServiceCard'
+import FeaturedWork from '@/components/sections/FeaturedWork'
 import SectionHeading from '@/components/SectionHeading'
+import Reveal from '@/components/motion/Reveal'
 import Button from '@/components/Button'
 
 const services = [
   {
-    icon: <SearchCheck size={22} />,
     title: 'Digital Audit',
     description: 'A clear look at your website, search visibility, performance and security — so you know exactly what you need.',
   },
   {
-    icon: <Globe size={22} />,
     title: 'Website Development',
     description: 'A site that clearly explains what your business does, works well on any device, and loads fast.',
   },
   {
-    icon: <Rocket size={22} />,
     title: 'Launch & Deployment',
     description: 'Hosting, security, domain, SEO basics and analytics set up properly — so your site is ready to work.',
   },
   {
-    icon: <ShieldCheck size={22} />,
     title: 'Monthly Digital Care',
     description: 'Ongoing updates, backups, security checks and small fixes, so your site stays reliable.',
   },
   {
-    icon: <TrendingUp size={22} />,
     title: 'Search & Growth',
     description: 'SEO, analytics and stronger calls to action — turning visitors into enquiries.',
   },
@@ -60,43 +54,50 @@ export default function HomePage() {
     <>
       <Hero />
 
+      <div className="divider max-w-7xl mx-auto" />
+
+      <FeaturedWork />
+
+      <div className="divider max-w-7xl mx-auto" />
+
       <About />
 
-      <div className="divider" />
+      <div className="divider max-w-7xl mx-auto" />
 
-      <Journey />
-
-      <div className="divider" />
-
-      {/* ── SERVICES ─────────────────────────────────────────── */}
-      <section className="py-28 max-w-7xl mx-auto px-6">
+      {/* ── SERVICES (numbered journey) ──────────────────────── */}
+      <section className="py-section max-w-7xl mx-auto px-6">
         <SectionHeading
           label="Services"
           title="How I help your business grow online."
           subtitle="A full digital lifecycle — audit, build, launch, care and growth — not just a one-off build."
-          centered
           className="mb-16"
         />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div>
           {services.map((s, i) => (
-            <ServiceCard key={s.title} {...s} index={i} />
+            <Reveal key={s.title} delay={i * 0.06}>
+              <div className="grid md:grid-cols-[80px_1fr_auto] gap-4 md:gap-8 items-baseline md:items-center py-8 border-t border-white/10 day:border-black/10 last:border-b">
+                <span className="font-grotesk text-sm text-accent">{String(i + 1).padStart(2, '0')}</span>
+                <div>
+                  <h3 className="font-grotesk font-semibold text-xl text-heading mb-1">{s.title}</h3>
+                  <p className="text-muted text-sm leading-relaxed max-w-xl">{s.description}</p>
+                </div>
+                <Link
+                  href="/services"
+                  className="group inline-flex items-center gap-1.5 text-sm text-heading font-medium hover:text-accent transition-colors whitespace-nowrap"
+                >
+                  Learn more
+                  <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+              </div>
+            </Reveal>
           ))}
-        </div>
-        <div className="flex justify-center mt-10">
-          <Button href="/services" variant="secondary" size="lg" arrow>
-            All Services
-          </Button>
         </div>
       </section>
 
-      <div className="divider" />
-
-      <Projects />
-
-      <div className="divider" />
+      <div className="divider max-w-7xl mx-auto" />
 
       {/* ── PROCESS ──────────────────────────────────────────── */}
-      <section id="process" ref={processRef} className="py-28 max-w-7xl mx-auto px-6">
+      <section id="process" ref={processRef} className="py-section max-w-7xl mx-auto px-6">
         <SectionHeading
           label="How I Work"
           title="Audit → Build → Launch → Care → Grow."
@@ -105,50 +106,35 @@ export default function HomePage() {
           className="mb-16"
         />
         <div className="grid md:grid-cols-5 gap-0 relative">
-          {/* Connecting line: static track + scroll-drawn accent fill */}
-          <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-px bg-white/10 day:bg-black/10" />
+          <div className="hidden md:block absolute top-6 left-[10%] right-[10%] h-px bg-white/10 day:bg-black/10" />
           <motion.div
-            className="hidden md:block absolute top-8 left-[10%] right-[10%] h-px bg-accent origin-left"
+            className="hidden md:block absolute top-6 left-[10%] right-[10%] h-px bg-accent origin-left"
             style={{ scaleX: processLineScale }}
           />
           {process.map((step, i) => (
-            <motion.div
-              key={step.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.12 }}
-              className="text-center px-6 py-8 relative"
-            >
-              <div className="w-14 h-14 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center mx-auto mb-5 relative z-10">
-                <span className="font-grotesk font-bold text-accent text-sm">0{i + 1}</span>
+            <Reveal key={step.title} delay={i * 0.1} className="text-center px-6 py-6 relative">
+              <div className="w-12 h-12 rounded-full border border-accent/30 flex items-center justify-center mx-auto mb-5 relative z-10 bg-dark">
+                <span className="font-grotesk font-semibold text-accent text-sm">0{i + 1}</span>
               </div>
               <h3 className="font-grotesk font-semibold text-heading text-lg mb-2">{step.title}</h3>
               <p className="text-muted text-sm leading-relaxed">{step.desc}</p>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
-        <p className="text-muted text-sm text-center max-w-xl mx-auto mt-6">
+        <p className="text-muted text-sm text-center max-w-xl mx-auto mt-10">
           It doesn&apos;t stop at Grow. Most of my clients stay in Care and Grow long-term, and I
           revisit the audit as their business changes.
         </p>
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-24 px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-muted border border-accent/25 rounded-3xl p-12 md:p-16 text-center relative overflow-hidden glow-green"
-        >
-          <div className="absolute inset-0 bg-accent-glow opacity-30 pointer-events-none" />
-          <span className="inline-block font-grotesk text-xs font-semibold uppercase tracking-widest text-accent mb-5 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full">
+      <section className="py-section px-6">
+        <Reveal className="max-w-4xl mx-auto text-center">
+          <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-6">
             No obligation
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-heading leading-tight tracking-tight mb-5">
-            Ready to see what your site{' '}
-            <span className="text-gradient-green">actually needs?</span>
+          <h2 className="text-statement font-semibold text-heading leading-tight tracking-tight mb-6">
+            Ready to see what your site actually needs?
           </h2>
           <p className="text-muted text-lg mb-10 max-w-xl mx-auto leading-relaxed">
             Tell me about your business and I&apos;ll start with a digital audit — clear findings, no generic pitch.
@@ -161,7 +147,7 @@ export default function HomePage() {
               Talk to me first
             </Button>
           </div>
-        </motion.div>
+        </Reveal>
       </section>
     </>
   )
