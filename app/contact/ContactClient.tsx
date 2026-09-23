@@ -63,7 +63,7 @@ export default function ContactPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-36 pb-16 max-w-7xl mx-auto px-6">
+      <section className="pt-40 pb-16 max-w-7xl mx-auto px-6">
         <SectionHeading
           label="Contact"
           title={"Let's talk about your\ndigital presence."}
@@ -73,20 +73,18 @@ export default function ContactPageClient() {
       </section>
 
       {/* Main Content */}
-      <section className="max-w-7xl mx-auto px-6 pb-28">
+      <section className="max-w-7xl mx-auto px-6 pb-section">
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Left – Contact Info */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="border border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8">
+          <div className="lg:col-span-2 flex flex-col gap-6">
+            <div className="border border-white/10 day:border-black/10 p-8">
               <h3 className="font-grotesk font-semibold text-heading text-lg mb-6">Get in touch</h3>
               <div className="space-y-5">
                 {contactInfo.map((item) => (
                   <div key={item.label} className="flex items-start gap-4">
-                    <div className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent flex-shrink-0 mt-0.5">
-                      {item.icon}
-                    </div>
+                    <div className="text-accent flex-shrink-0 mt-0.5">{item.icon}</div>
                     <div>
-                      <p className="text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-1">
+                      <p className="text-xs font-semibold text-muted uppercase tracking-wider mb-1">
                         {item.label}
                       </p>
                       {item.href ? (
@@ -102,7 +100,7 @@ export default function ContactPageClient() {
               </div>
             </div>
 
-            <div className="border border-accent/20 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8 glow-green-sm">
+            <div className="border border-accent/25 p-8">
               <h3 className="font-grotesk font-semibold text-heading text-base mb-3">Not sure where to start?</h3>
               <p className="text-muted text-sm leading-relaxed mb-5">
                 Use the detailed form to walk through your business and requirements step by step — it starts with a Digital Audit.
@@ -115,17 +113,17 @@ export default function ContactPageClient() {
 
           {/* Right – Contact Form */}
           <div className="lg:col-span-3">
-            <div className="border border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8">
+            <div className="border border-white/10 day:border-black/10 p-8">
               {submitted ? (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
                   className="flex flex-col items-center justify-center py-16 text-center"
                 >
-                  <div className="w-16 h-16 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center mb-6 glow-green">
-                    <CheckCircle size={32} className="text-accent" />
+                  <div className="w-14 h-14 rounded-full border border-accent/40 flex items-center justify-center mb-6">
+                    <CheckCircle size={28} className="text-accent" />
                   </div>
-                  <h3 className="font-grotesk font-bold text-heading text-2xl mb-3">Message sent!</h3>
+                  <h3 className="font-grotesk font-semibold text-heading text-2xl mb-3">Message sent!</h3>
                   <p className="text-muted leading-relaxed max-w-sm">
                     Thanks for reaching out. I&apos;ll review your message and get back to you within 48 hours.
                   </p>
@@ -134,7 +132,7 @@ export default function ContactPageClient() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">
+                      <label className="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">
                         Full Name *
                       </label>
                       <input
@@ -147,7 +145,7 @@ export default function ContactPageClient() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">
+                      <label className="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">
                         Email Address *
                       </label>
                       <input
@@ -161,7 +159,7 @@ export default function ContactPageClient() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">
                       Company / Organisation
                     </label>
                     <input
@@ -174,7 +172,7 @@ export default function ContactPageClient() {
                   </div>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">
+                      <label className="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">
                         Project Type
                       </label>
                       <select
@@ -189,7 +187,7 @@ export default function ContactPageClient() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">
+                      <label className="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">
                         Budget Range
                       </label>
                       <select
@@ -205,7 +203,7 @@ export default function ContactPageClient() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-grotesk font-semibold text-muted uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">
                       Message *
                     </label>
                     <textarea

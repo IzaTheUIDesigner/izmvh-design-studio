@@ -87,10 +87,10 @@ export default function QuotePageClient() {
   }
 
   return (
-    <section className="pt-36 pb-28 max-w-3xl mx-auto px-6">
+    <section className="pt-40 pb-section max-w-3xl mx-auto px-6">
       {/* Header */}
       <div className="mb-10">
-        <span className="inline-block font-grotesk text-xs font-semibold uppercase tracking-[0.15em] text-accent mb-4 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full">
+        <span className="block font-grotesk text-xs font-semibold uppercase tracking-[0.15em] text-accent mb-4">
           Start with a Digital Audit
         </span>
         <h1 className="text-4xl font-bold text-heading leading-tight mb-3">
@@ -107,9 +107,9 @@ export default function QuotePageClient() {
             {steps.map((s, i) => (
               <div key={s.id} className="flex items-center gap-1 flex-shrink-0">
                 <div
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
                     step === s.id
-                      ? 'bg-accent text-black glow-green-sm'
+                      ? 'bg-accent text-black'
                       : step > s.id
                       ? 'bg-accent/10 text-accent'
                       : 'border border-white/10 day:border-black/10 text-muted'
@@ -136,15 +136,15 @@ export default function QuotePageClient() {
       )}
 
       {/* Form Card */}
-      <div className="border border-white/5 day:border-black/5 bg-gradient-to-br from-accent/[0.05] to-accent/[0.02] rounded-2xl p-8">
+      <div className="border border-white/10 day:border-black/10 p-8">
         {submitted ? (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center py-12 text-center"
           >
-            <div className="w-20 h-20 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center mb-6 glow-green">
-              <CheckCircle size={40} className="text-accent" />
+            <div className="w-16 h-16 rounded-full border border-accent/40 flex items-center justify-center mb-6">
+              <CheckCircle size={32} className="text-accent" />
             </div>
             <h2 className="font-grotesk font-bold text-heading text-3xl mb-3">Brief received!</h2>
             <p className="text-muted leading-relaxed max-w-sm mb-8">
@@ -203,9 +203,9 @@ export default function QuotePageClient() {
                     <button
                       key={pt.id}
                       onClick={() => update('projectType', pt.id)}
-                      className={`w-full flex items-center gap-4 p-4 rounded-xl border text-left transition-all ${
+                      className={`w-full flex items-center gap-4 p-4 rounded-lg border text-left transition-all ${
                         form.projectType === pt.id
-                          ? 'border-accent bg-accent/10 glow-green-sm'
+                          ? 'border-accent bg-accent/10'
                           : 'border-white/10 day:border-black/10 bg-white/[0.02] day:bg-black/[0.02] hover:border-white/20 day:hover:border-black/20'
                       }`}
                     >
@@ -288,9 +288,9 @@ export default function QuotePageClient() {
                     <button
                       key={b.id}
                       onClick={() => update('budget', b.id)}
-                      className={`p-4 rounded-xl border text-left transition-all ${
+                      className={`p-4 rounded-lg border text-left transition-all ${
                         form.budget === b.id
-                          ? 'border-accent bg-accent/10 glow-green-sm'
+                          ? 'border-accent bg-accent/10'
                           : 'border-white/10 day:border-black/10 bg-white/[0.02] day:bg-black/[0.02] hover:border-white/20 day:hover:border-black/20'
                       }`}
                     >
@@ -312,9 +312,9 @@ export default function QuotePageClient() {
                     <button
                       key={t.id}
                       onClick={() => update('timeline', t.id)}
-                      className={`p-4 rounded-xl border text-left transition-all ${
+                      className={`p-4 rounded-lg border text-left transition-all ${
                         form.timeline === t.id
-                          ? 'border-accent bg-accent/10 glow-green-sm'
+                          ? 'border-accent bg-accent/10'
                           : 'border-white/10 day:border-black/10 bg-white/[0.02] day:bg-black/[0.02] hover:border-white/20 day:hover:border-black/20'
                       }`}
                     >
