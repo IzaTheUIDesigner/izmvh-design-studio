@@ -58,15 +58,20 @@ export default function PortfolioPageClient() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.5, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
               >
-                <ImageFrame
-                  src={project.image || '/images/harrison.png'}
-                  alt={project.title}
-                  aspect="aspect-[4/3]"
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  eyebrow={project.category}
-                  caption={project.title}
-                  className={project.image ? '' : 'opacity-40'}
-                />
+                {project.image ? (
+                  <ImageFrame
+                    src={project.image}
+                    alt={project.title}
+                    aspect="aspect-[4/3]"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    eyebrow={project.category}
+                    caption={project.title}
+                  />
+                ) : (
+                  <div className="aspect-[4/3] bg-surface flex items-center justify-center">
+                    <span className="text-muted text-sm">Preview coming soon</span>
+                  </div>
+                )}
 
                 <div className="pt-5">
                   <div className="flex items-center justify-between mb-2">
